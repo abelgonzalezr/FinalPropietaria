@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="305f7d75109342dfb5e493d9f78b2b3e" Name="Diagram1">
+        <EntityTypeShape EntityType="rentCarModel.Cliente" Width="1.5" PointX="5.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="rentCarModel.Empleado" Width="1.5" PointX="2.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="rentCarModel.Marca" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="rentCarModel.Modelo" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="rentCarModel.procesoInspeccion" Width="1.5" PointX="5.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="rentCarModel.Renta" Width="1.5" PointX="4.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="rentCarModel.tiposDeCombustible" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="rentCarModel.TipoVehiculo" Width="1.5" PointX="0.75" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="rentCarModel.vehiculo" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="rentCarModel.Devolucion" Width="1.5" PointX="6.75" PointY="8.125" IsExpanded="true" />
+        <AssociationConnector Association="rentCarModel.Modelo_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="rentCarModel.vehiculos_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="rentCarModel.FK_tiposDeCombustible_tiposDeCombustible1" ManuallyRouted="false" />
+        <AssociationConnector Association="rentCarModel.vehiculos_fk3" ManuallyRouted="false" />
+        <AssociationConnector Association="rentCarModel.vehiculos_fk2" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="rentCarModel.Reportevehiculo" Width="1.5" PointX="8.375" PointY="0.75" />
+        <AssociationConnector Association="rentCarModel.Renta_fk" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

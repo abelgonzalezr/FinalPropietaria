@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="rentCarModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Clientes">
+    <Key>
+      <PropertyRef Name="IdCliente" />
+    </Key>
+    <Property Name="IdCliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="numeroTelefono" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="direccion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdVehiculos" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'rentCar.dbo.Devolucion' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Devolucion">
+    <Key>
+      <PropertyRef Name="IdDevolucion" />
+      <PropertyRef Name="IdRenta" />
+      <PropertyRef Name="detallesDevolucion" />
+      <PropertyRef Name="fechaDevolucion" />
+    </Key>
+    <Property Name="IdDevolucion" Type="int" Nullable="false" />
+    <Property Name="IdRenta" Type="int" Nullable="false" />
+    <Property Name="detallesDevolucion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="fechaDevolucion" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Empleado">
+    <Key>
+      <PropertyRef Name="IdEmpleado" />
+    </Key>
+    <Property Name="IdEmpleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Decision" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="numeroTelefono" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Marcas">
+    <Key>
+      <PropertyRef Name="IdMarca" />
+    </Key>
+    <Property Name="IdMarca" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Modelo">
+    <Key>
+      <PropertyRef Name="IdModelo" />
+    </Key>
+    <Property Name="IdModelo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdMarca" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="procesoInspeccion">
+    <Key>
+      <PropertyRef Name="IdInspeccion" />
+    </Key>
+    <Property Name="IdInspeccion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdVehiculo" Type="int" Nullable="false" />
+    <Property Name="detalleInspeccion" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Renta">
+    <Key>
+      <PropertyRef Name="IdRenta" />
+    </Key>
+    <Property Name="IdRenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdVehiculo" Type="int" Nullable="false" />
+    <Property Name="IdCliente" Type="int" Nullable="false" />
+    <Property Name="IdEmpleado" Type="int" Nullable="false" />
+    <Property Name="FechaRenta" Type="datetime" Nullable="false" />
+    <Property Name="DetalleRenta" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tiposDeCombustible">
+    <Key>
+      <PropertyRef Name="IdCombustible" />
+    </Key>
+    <Property Name="IdCombustible" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoVehiculo">
+    <Key>
+      <PropertyRef Name="IdTipoVehiculo" />
+    </Key>
+    <Property Name="IdTipoVehiculo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vehiculos">
+    <Key>
+      <PropertyRef Name="IdVehiculos" />
+    </Key>
+    <Property Name="IdVehiculos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="30" />
+    <Property Name="IdMarca" Type="int" Nullable="false" />
+    <Property Name="IdTipoVehiculo" Type="int" Nullable="false" />
+    <Property Name="IdCombustible" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="Clientes_fk">
+    <End Role="vehiculos" Type="Self.vehiculos" Multiplicity="1" />
+    <End Role="Clientes" Type="Self.Clientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vehiculos">
+        <PropertyRef Name="IdVehiculos" />
+      </Principal>
+      <Dependent Role="Clientes">
+        <PropertyRef Name="IdVehiculos" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tiposDeCombustible_tiposDeCombustible1">
+    <End Role="tiposDeCombustible" Type="Self.tiposDeCombustible" Multiplicity="1" />
+    <End Role="tiposDeCombustible1" Type="Self.tiposDeCombustible" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tiposDeCombustible">
+        <PropertyRef Name="IdCombustible" />
+      </Principal>
+      <Dependent Role="tiposDeCombustible1">
+        <PropertyRef Name="IdCombustible" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Modelo_fk">
+    <End Role="Marcas" Type="Self.Marcas" Multiplicity="1" />
+    <End Role="Modelo" Type="Self.Modelo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Marcas">
+        <PropertyRef Name="IdMarca" />
+      </Principal>
+      <Dependent Role="Modelo">
+        <PropertyRef Name="IdMarca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="vehiculos_fk">
+    <End Role="Marcas" Type="Self.Marcas" Multiplicity="1" />
+    <End Role="vehiculos" Type="Self.vehiculos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Marcas">
+        <PropertyRef Name="IdMarca" />
+      </Principal>
+      <Dependent Role="vehiculos">
+        <PropertyRef Name="IdMarca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="vehiculos_fk2">
+    <End Role="TipoVehiculo" Type="Self.TipoVehiculo" Multiplicity="1" />
+    <End Role="vehiculos" Type="Self.vehiculos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoVehiculo">
+        <PropertyRef Name="IdTipoVehiculo" />
+      </Principal>
+      <Dependent Role="vehiculos">
+        <PropertyRef Name="IdTipoVehiculo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="vehiculos_fk3">
+    <End Role="tiposDeCombustible" Type="Self.tiposDeCombustible" Multiplicity="1" />
+    <End Role="vehiculos" Type="Self.vehiculos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tiposDeCombustible">
+        <PropertyRef Name="IdCombustible" />
+      </Principal>
+      <Dependent Role="vehiculos">
+        <PropertyRef Name="IdCombustible" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="rentCarModelStoreContainer">
+    <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Empleado" EntityType="Self.Empleado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Marcas" EntityType="Self.Marcas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Modelo" EntityType="Self.Modelo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="procesoInspeccion" EntityType="Self.procesoInspeccion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Renta" EntityType="Self.Renta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tiposDeCombustible" EntityType="Self.tiposDeCombustible" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoVehiculo" EntityType="Self.TipoVehiculo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vehiculos" EntityType="Self.vehiculos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Devolucion" EntityType="Self.Devolucion" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Devolucion].[IdDevolucion] AS [IdDevolucion], 
+    [Devolucion].[IdRenta] AS [IdRenta], 
+    [Devolucion].[detallesDevolucion] AS [detallesDevolucion], 
+    [Devolucion].[fechaDevolucion] AS [fechaDevolucion]
+    FROM [dbo].[Devolucion] AS [Devolucion]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="Clientes_fk" Association="Self.Clientes_fk">
+      <End Role="vehiculos" EntitySet="vehiculos" />
+      <End Role="Clientes" EntitySet="Clientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tiposDeCombustible_tiposDeCombustible1" Association="Self.FK_tiposDeCombustible_tiposDeCombustible1">
+      <End Role="tiposDeCombustible" EntitySet="tiposDeCombustible" />
+      <End Role="tiposDeCombustible1" EntitySet="tiposDeCombustible" />
+    </AssociationSet>
+    <AssociationSet Name="Modelo_fk" Association="Self.Modelo_fk">
+      <End Role="Marcas" EntitySet="Marcas" />
+      <End Role="Modelo" EntitySet="Modelo" />
+    </AssociationSet>
+    <AssociationSet Name="vehiculos_fk" Association="Self.vehiculos_fk">
+      <End Role="Marcas" EntitySet="Marcas" />
+      <End Role="vehiculos" EntitySet="vehiculos" />
+    </AssociationSet>
+    <AssociationSet Name="vehiculos_fk2" Association="Self.vehiculos_fk2">
+      <End Role="TipoVehiculo" EntitySet="TipoVehiculo" />
+      <End Role="vehiculos" EntitySet="vehiculos" />
+    </AssociationSet>
+    <AssociationSet Name="vehiculos_fk3" Association="Self.vehiculos_fk3">
+      <End Role="tiposDeCombustible" EntitySet="tiposDeCombustible" />
+      <End Role="vehiculos" EntitySet="vehiculos" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

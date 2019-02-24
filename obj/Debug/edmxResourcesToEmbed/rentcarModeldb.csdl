@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="rentCarModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="IdCliente" />
+    </Key>
+    <Property Name="IdCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="numeroTelefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdVehiculos" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="vehiculo" Relationship="rentCarModel.Clientes_fk" FromRole="Cliente" ToRole="vehiculo" />
+  </EntityType>
+  <EntityType Name="Empleado">
+    <Key>
+      <PropertyRef Name="IdEmpleado" />
+    </Key>
+    <Property Name="IdEmpleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Decision" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="numeroTelefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Marca">
+    <Property Name="IdMarca" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Modeloes" Relationship="rentCarModel.Modelo_fk" FromRole="Marca" ToRole="Modelo" />
+    <NavigationProperty Name="vehiculos" Relationship="rentCarModel.vehiculos_fk" FromRole="Marca" ToRole="vehiculo" />
+    <NavigationProperty Name="Modeloes1" Relationship="rentCarModel.Modelo_fk1" FromRole="Marca" ToRole="Modelo" />
+    <NavigationProperty Name="vehiculos1" Relationship="rentCarModel.vehiculos_fk1" FromRole="Marca" ToRole="vehiculo" />
+  </EntityType>
+  <EntityType Name="procesoInspeccion">
+    <Key>
+      <PropertyRef Name="IdInspeccion" />
+    </Key>
+    <Property Name="IdInspeccion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdVehiculo" Type="Int32" Nullable="false" />
+    <Property Name="detalleInspeccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Renta">
+    <Key>
+      <PropertyRef Name="IdRenta" />
+    </Key>
+    <Property Name="IdRenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdVehiculo" Type="Int32" Nullable="false" />
+    <Property Name="IdCliente" Type="Int32" Nullable="false" />
+    <Property Name="IdEmpleado" Type="Int32" Nullable="false" />
+    <Property Name="FechaRenta" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DetalleRenta" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tiposDeCombustible">
+    <Key>
+      <PropertyRef Name="IdCombustible" />
+    </Key>
+    <Property Name="IdCombustible" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tiposDeCombustible1" Relationship="Self.FK_tiposDeCombustible_tiposDeCombustible1" FromRole="tiposDeCombustible" ToRole="tiposDeCombustible1" />
+    <NavigationProperty Name="tiposDeCombustible2" Relationship="Self.FK_tiposDeCombustible_tiposDeCombustible1" FromRole="tiposDeCombustible1" ToRole="tiposDeCombustible" />
+    <NavigationProperty Name="vehiculos" Relationship="rentCarModel.vehiculos_fk3" FromRole="tiposDeCombustible" ToRole="vehiculo" />
+  </EntityType>
+  <EntityType Name="TipoVehiculo">
+    <Key>
+      <PropertyRef Name="IdTipoVehiculo" />
+    </Key>
+    <Property Name="IdTipoVehiculo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="TipoVehiculo1" Relationship="Self.FK_TipoVehiculo_TipoVehiculo" FromRole="TipoVehiculo" ToRole="TipoVehiculo1" />
+    <NavigationProperty Name="TipoVehiculo2" Relationship="Self.FK_TipoVehiculo_TipoVehiculo" FromRole="TipoVehiculo1" ToRole="TipoVehiculo" />
+    <NavigationProperty Name="vehiculos" Relationship="rentCarModel.vehiculos_fk2" FromRole="TipoVehiculo" ToRole="vehiculo" />
+  </EntityType>
+  <EntityType Name="vehiculo">
+    <Key>
+      <PropertyRef Name="IdVehiculos" />
+    </Key>
+    <Property Name="IdVehiculos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdMarca" Type="Int32" Nullable="false" />
+    <Property Name="IdTipoVehiculo" Type="Int32" Nullable="false" />
+    <Property Name="IdCombustible" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Marca" Relationship="rentCarModel.vehiculos_fk" FromRole="vehiculo" ToRole="Marca" />
+    <NavigationProperty Name="Clientes" Relationship="rentCarModel.Clientes_fk" FromRole="vehiculo" ToRole="Cliente" />
+    <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Marca1" Relationship="rentCarModel.vehiculos_fk1" FromRole="vehiculo" ToRole="Marca" />
+    <NavigationProperty Name="tiposDeCombustible" Relationship="rentCarModel.vehiculos_fk3" FromRole="vehiculo" ToRole="tiposDeCombustible" />
+    <NavigationProperty Name="TipoVehiculo" Relationship="rentCarModel.vehiculos_fk2" FromRole="vehiculo" ToRole="TipoVehiculo" />
+  </EntityType>
+  <EntityType Name="Devolucion">
+    <Key>
+      <PropertyRef Name="IdDevolucion" />
+      <PropertyRef Name="IdRenta" />
+      <PropertyRef Name="detallesDevolucion" />
+      <PropertyRef Name="fechaDevolucion" />
+    </Key>
+    <Property Name="IdDevolucion" Type="Int32" Nullable="false" />
+    <Property Name="IdRenta" Type="Int32" Nullable="false" />
+    <Property Name="detallesDevolucion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fechaDevolucion" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Modelo">
+    <Key>
+      <PropertyRef Name="IdModelo" />
+      <PropertyRef Name="IdMarca" />
+      <PropertyRef Name="Nombre" />
+    </Key>
+    <Property Name="IdModelo" Type="Int32" Nullable="false" />
+    <Property Name="IdMarca" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Marca" Relationship="rentCarModel.Modelo_fk" FromRole="Modelo" ToRole="Marca" />
+    <NavigationProperty Name="Marca1" Relationship="rentCarModel.Modelo_fk1" FromRole="Modelo" ToRole="Marca" />
+  </EntityType>
+  <Association Name="FK_tiposDeCombustible_tiposDeCombustible1">
+    <End Role="tiposDeCombustible" Type="Self.tiposDeCombustible" Multiplicity="1" />
+    <End Role="tiposDeCombustible1" Type="Self.tiposDeCombustible" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tiposDeCombustible">
+        <PropertyRef Name="IdCombustible" />
+      </Principal>
+      <Dependent Role="tiposDeCombustible1">
+        <PropertyRef Name="IdCombustible" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TipoVehiculo_TipoVehiculo">
+    <End Role="TipoVehiculo" Type="Self.TipoVehiculo" Multiplicity="1" />
+    <End Role="TipoVehiculo1" Type="Self.TipoVehiculo" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="TipoVehiculo">
+        <PropertyRef Name="IdTipoVehiculo" />
+      </Principal>
+      <Dependent Role="TipoVehiculo1">
+        <PropertyRef Name="IdTipoVehiculo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="rentCarEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Clientes" EntityType="Self.Cliente" />
+    <EntitySet Name="Empleadoes" EntityType="Self.Empleado" />
+    <EntitySet Name="Marcas" EntityType="Self.Marca" />
+    <EntitySet Name="procesoInspeccions" EntityType="Self.procesoInspeccion" />
+    <EntitySet Name="Rentas" EntityType="Self.Renta" />
+    <EntitySet Name="tiposDeCombustibles" EntityType="Self.tiposDeCombustible" />
+    <EntitySet Name="TipoVehiculoes" EntityType="Self.TipoVehiculo" />
+    <EntitySet Name="vehiculos" EntityType="Self.vehiculo" />
+    <EntitySet Name="Devolucions" EntityType="Self.Devolucion" />
+    <EntitySet Name="Modeloes" EntityType="Self.Modelo" />
+    <AssociationSet Name="FK_tiposDeCombustible_tiposDeCombustible1" Association="Self.FK_tiposDeCombustible_tiposDeCombustible1">
+      <End Role="tiposDeCombustible" EntitySet="tiposDeCombustibles" />
+      <End Role="tiposDeCombustible1" EntitySet="tiposDeCombustibles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TipoVehiculo_TipoVehiculo" Association="Self.FK_TipoVehiculo_TipoVehiculo">
+      <End Role="TipoVehiculo" EntitySet="TipoVehiculoes" />
+      <End Role="TipoVehiculo1" EntitySet="TipoVehiculoes" />
+    </AssociationSet>
+    <AssociationSet Name="Modelo_fk" Association="rentCarModel.Modelo_fk">
+      <End Role="Marca" EntitySet="Marcas" />
+      <End Role="Modelo" EntitySet="Modeloes" />
+    </AssociationSet>
+    <AssociationSet Name="vehiculos_fk" Association="rentCarModel.vehiculos_fk">
+      <End Role="Marca" EntitySet="Marcas" />
+      <End Role="vehiculo" EntitySet="vehiculos" />
+    </AssociationSet>
+    <AssociationSet Name="Clientes_fk" Association="rentCarModel.Clientes_fk">
+      <End Role="vehiculo" EntitySet="vehiculos" />
+      <End Role="Cliente" EntitySet="Clientes" />
+    </AssociationSet>
+    <AssociationSet Name="Modelo_fk1" Association="rentCarModel.Modelo_fk1">
+      <End Role="Marca" EntitySet="Marcas" />
+      <End Role="Modelo" EntitySet="Modeloes" />
+    </AssociationSet>
+    <AssociationSet Name="vehiculos_fk1" Association="rentCarModel.vehiculos_fk1">
+      <End Role="Marca" EntitySet="Marcas" />
+      <End Role="vehiculo" EntitySet="vehiculos" />
+    </AssociationSet>
+    <AssociationSet Name="vehiculos_fk3" Association="rentCarModel.vehiculos_fk3">
+      <End Role="tiposDeCombustible" EntitySet="tiposDeCombustibles" />
+      <End Role="vehiculo" EntitySet="vehiculos" />
+    </AssociationSet>
+    <AssociationSet Name="vehiculos_fk2" Association="rentCarModel.vehiculos_fk2">
+      <End Role="TipoVehiculo" EntitySet="TipoVehiculoes" />
+      <End Role="vehiculo" EntitySet="vehiculos" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="Modelo_fk">
+    <End Type="rentCarModel.Marca" Role="Marca" Multiplicity="1" />
+    <End Type="rentCarModel.Modelo" Role="Modelo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Marca" />
+      <Dependent Role="Modelo" />
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="vehiculos_fk">
+    <End Type="rentCarModel.Marca" Role="Marca" Multiplicity="1" />
+    <End Type="rentCarModel.vehiculo" Role="vehiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Marca" />
+      <Dependent Role="vehiculo" />
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Clientes_fk">
+    <End Type="rentCarModel.vehiculo" Role="vehiculo" Multiplicity="1" />
+    <End Type="rentCarModel.Cliente" Role="Cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vehiculo">
+        <PropertyRef Name="IdVehiculos" />
+      </Principal>
+      <Dependent Role="Cliente">
+        <PropertyRef Name="IdVehiculos" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Modelo_fk1">
+    <End Type="rentCarModel.Marca" Role="Marca" Multiplicity="1" />
+    <End Type="rentCarModel.Modelo" Role="Modelo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Marca">
+        <PropertyRef Name="IdMarca" />
+      </Principal>
+      <Dependent Role="Modelo">
+        <PropertyRef Name="IdMarca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="vehiculos_fk1">
+    <End Type="rentCarModel.Marca" Role="Marca" Multiplicity="1" />
+    <End Type="rentCarModel.vehiculo" Role="vehiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Marca">
+        <PropertyRef Name="IdMarca" />
+      </Principal>
+      <Dependent Role="vehiculo">
+        <PropertyRef Name="IdMarca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="vehiculos_fk3">
+    <End Type="rentCarModel.tiposDeCombustible" Role="tiposDeCombustible" Multiplicity="1" />
+    <End Type="rentCarModel.vehiculo" Role="vehiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tiposDeCombustible">
+        <PropertyRef Name="IdCombustible" />
+      </Principal>
+      <Dependent Role="vehiculo">
+        <PropertyRef Name="IdCombustible" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="vehiculos_fk2">
+    <End Type="rentCarModel.TipoVehiculo" Role="TipoVehiculo" Multiplicity="1" />
+    <End Type="rentCarModel.vehiculo" Role="vehiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoVehiculo">
+        <PropertyRef Name="IdTipoVehiculo" />
+      </Principal>
+      <Dependent Role="vehiculo">
+        <PropertyRef Name="IdTipoVehiculo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
