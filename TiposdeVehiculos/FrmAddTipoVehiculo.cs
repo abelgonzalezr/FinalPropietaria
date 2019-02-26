@@ -42,7 +42,7 @@ namespace RentCarGonzalez.TiposdeVehiculos
                 entities.TipoVehiculoes.Add(new TipoVehiculo
                 {
                     Nombre = txtNombre.Text,
-                    estado= Boolean.Parse(comboestado.SelectedValue.ToString())
+                    estado= estado
             });
                 entities.SaveChanges();
                 MessageBox.Show("Datos guardados con exito");

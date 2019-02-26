@@ -63,5 +63,10 @@ namespace RentCarGonzalez.Rentas
             FrmRenta mar = new FrmRenta();
             mar.ShowDialog();
         }
+
+        private void combovehiculo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -56,6 +56,7 @@
             // 
             // comboMarca
             // 
+            this.comboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboMarca.DataSource = this.marcasBindingSource;
             this.comboMarca.DisplayMember = "Nombre";
             this.comboMarca.FormattingEnabled = true;
@@ -127,6 +128,7 @@
             // 
             // ComboTipoVehiculo
             // 
+            this.ComboTipoVehiculo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboTipoVehiculo.DataSource = this.tipoVehiculoBindingSource;
             this.ComboTipoVehiculo.DisplayMember = "Nombre";
             this.ComboTipoVehiculo.FormattingEnabled = true;
@@ -138,6 +140,7 @@
             // 
             // ComboCombustible
             // 
+            this.ComboCombustible.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboCombustible.DataSource = this.tiposDeCombustibleBindingSource;
             this.ComboCombustible.DisplayMember = "Nombre";
             this.ComboCombustible.FormattingEnabled = true;

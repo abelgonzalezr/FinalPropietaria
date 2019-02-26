@@ -158,6 +158,7 @@
             // 
             // comboCriterio
             // 
+            this.comboCriterio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboCriterio.FormattingEnabled = true;
             this.comboCriterio.Items.AddRange(new object[] {
             "Tipo Vehiculo",

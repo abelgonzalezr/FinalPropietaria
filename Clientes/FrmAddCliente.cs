@@ -62,7 +62,8 @@ namespace RentCarGonzalez.Clientes
                     {
                         Nombre = txtNombre.Text,
                         direccion = txtDireccion.Text,
-                        numeroTelefono = txtTelefono.Text
+                        numeroTelefono = txtTelefono.Text,
+                        cedula = txtcedula.Text
                     });
                     entities.SaveChanges();
                     MessageBox.Show("Datos guardados con exito");

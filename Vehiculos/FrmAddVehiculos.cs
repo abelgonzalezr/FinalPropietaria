@@ -43,6 +43,9 @@ namespace RentCarGonzalez.Vehiculos
             {
                 var vehiculo = entities.vehiculos.Find(this.values);
                 vehiculo.Nombre = txtNombre.Text;
+                vehiculo.IdMarca = Int32.Parse(comboMarca.SelectedValue.ToString());
+                vehiculo.IdTipoVehiculo = Int32.Parse(ComboTipoVehiculo.SelectedValue.ToString());
+                vehiculo.IdCombustible = Int32.Parse(ComboCombustible.SelectedValue.ToString());
                 entities.Entry(vehiculo).State = System.Data.Entity.EntityState.Modified;
                 entities.SaveChanges();
                 MessageBox.Show("Datos editados con exito");

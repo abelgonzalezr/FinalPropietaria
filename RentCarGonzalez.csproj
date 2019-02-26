@@ -134,6 +134,18 @@
     <Compile Include="Modelo.cs">
       <DependentUpon>RentCar.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modelos\FrmAddModelo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modelos\FrmAddModelo.Designer.cs">
+      <DependentUpon>FrmAddModelo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\FrmModelo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modelos\FrmModelo.Designer.cs">
+      <DependentUpon>FrmModelo.cs</DependentUpon>
+    </Compile>
     <Compile Include="procesoInspeccion.cs">
       <DependentUpon>RentCar.tt</DependentUpon>
     </Compile>
@@ -273,6 +285,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Marcas\FrmMarcas.resx">
       <DependentUpon>FrmMarcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modelos\FrmAddModelo.resx">
+      <DependentUpon>FrmAddModelo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modelos\FrmModelo.resx">
+      <DependentUpon>FrmModelo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -450,6 +468,8 @@
       <DependentUpon>RentCar.edmx</DependentUpon>
       <LastGenOutput>RentCar.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\Undo-icon.png" />
+    <None Include="Resources\car-icon.png" />
     <None Include="Resources\Product-sale-report-icon.png" />
   </ItemGroup>
   <ItemGroup />

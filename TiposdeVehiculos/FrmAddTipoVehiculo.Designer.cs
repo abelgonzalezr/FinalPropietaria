@@ -102,6 +102,7 @@
             // 
             // comboestado
             // 
+            this.comboestado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboestado.DataSource = this.estadosBindingSource;
             this.comboestado.DisplayMember = "Nombre";
             this.comboestado.FormattingEnabled = true;
