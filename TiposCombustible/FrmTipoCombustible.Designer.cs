@@ -38,16 +38,16 @@
             this.txtbuscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.datagridcombustible = new System.Windows.Forms.DataGridView();
-            this.rentCarDataSet1 = new RentCarGonzalez.rentCarDataSet();
-            this.tiposDeCombustibleBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.tiposDeCombustibleTableAdapter1 = new RentCarGonzalez.rentCarDataSetTableAdapters.tiposDeCombustibleTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tiposDeCombustibleBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.rentCarDataSet1 = new RentCarGonzalez.rentCarDataSet();
+            this.tiposDeCombustibleTableAdapter1 = new RentCarGonzalez.rentCarDataSetTableAdapters.tiposDeCombustibleTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.tiposDeCombustibleBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridcombustible)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiposDeCombustibleBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // tiposDeCombustibleBindingSource
@@ -137,20 +137,6 @@
             this.datagridcombustible.Size = new System.Drawing.Size(240, 150);
             this.datagridcombustible.TabIndex = 5;
             // 
-            // rentCarDataSet1
-            // 
-            this.rentCarDataSet1.DataSetName = "rentCarDataSet";
-            this.rentCarDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tiposDeCombustibleBindingSource1
-            // 
-            this.tiposDeCombustibleBindingSource1.DataMember = "tiposDeCombustible";
-            this.tiposDeCombustibleBindingSource1.DataSource = this.rentCarDataSet1;
-            // 
-            // tiposDeCombustibleTableAdapter1
-            // 
-            this.tiposDeCombustibleTableAdapter1.ClearBeforeFill = true;
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "IdCombustible";
@@ -165,6 +151,20 @@
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
+            // tiposDeCombustibleBindingSource1
+            // 
+            this.tiposDeCombustibleBindingSource1.DataMember = "tiposDeCombustible";
+            this.tiposDeCombustibleBindingSource1.DataSource = this.rentCarDataSet1;
+            // 
+            // rentCarDataSet1
+            // 
+            this.rentCarDataSet1.DataSetName = "rentCarDataSet";
+            this.rentCarDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tiposDeCombustibleTableAdapter1
+            // 
+            this.tiposDeCombustibleTableAdapter1.ClearBeforeFill = true;
+            // 
             // FrmTipoCombustible
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -176,14 +176,14 @@
             this.Controls.Add(this.btnedit);
             this.Controls.Add(this.btnadd);
             this.Name = "FrmTipoCombustible";
-            this.Text = "FrmTipoCombustible";
+            this.Text = "Tipo Combustible";
             this.Load += new System.EventHandler(this.FrmTipoCombustible_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tiposDeCombustibleBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridcombustible)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiposDeCombustibleBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }

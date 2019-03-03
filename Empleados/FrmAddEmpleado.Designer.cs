@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtcedula = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -37,8 +39,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtcedula = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +57,22 @@
             this.groupBox1.Size = new System.Drawing.Size(431, 150);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // txtcedula
+            // 
+            this.txtcedula.Location = new System.Drawing.Point(102, 79);
+            this.txtcedula.Name = "txtcedula";
+            this.txtcedula.Size = new System.Drawing.Size(323, 20);
+            this.txtcedula.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(23, 87);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Cedula";
             // 
             // txtTelefono
             // 
@@ -125,22 +141,6 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 87);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Cedula";
-            // 
-            // txtcedula
-            // 
-            this.txtcedula.Location = new System.Drawing.Point(102, 79);
-            this.txtcedula.Name = "txtcedula";
-            this.txtcedula.Size = new System.Drawing.Size(323, 20);
-            this.txtcedula.TabIndex = 7;
-            // 
             // FrmAddEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -150,7 +150,7 @@
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmAddEmpleado";
-            this.Text = "FrmAddEmpleado";
+            this.Text = "Añadir Empleado";
             this.Load += new System.EventHandler(this.FrmAddEmpleado_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

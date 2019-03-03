@@ -95,6 +95,12 @@
     <Compile Include="Devolucion.cs">
       <DependentUpon>RentCar.tt</DependentUpon>
     </Compile>
+    <Compile Include="Devoluciones\FrmDevolucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Devoluciones\FrmDevolucion.Designer.cs">
+      <DependentUpon>FrmDevolucion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Empleado.cs">
       <DependentUpon>RentCar.tt</DependentUpon>
     </Compile>
@@ -196,6 +202,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>rentCarDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="rentCarDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rentCarDataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="rentCarDataSetAct.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -249,6 +260,11 @@
     <Compile Include="vehiculo.cs">
       <DependentUpon>RentCar.tt</DependentUpon>
     </Compile>
+    <Compile Include="vehiculosrentados.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vehiculosrentados.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Vehiculos\FrmAddVehiculos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -270,6 +286,9 @@
     <EmbeddedResource Include="CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Devoluciones\FrmDevolucion.resx">
+      <DependentUpon>FrmDevolucion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Empleados\FrmAddEmpleado.resx">
       <DependentUpon>FrmAddEmpleado.cs</DependentUpon>
@@ -350,6 +369,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="vehiculosrentados.xsc">
+      <DependentUpon>vehiculosrentados.xsd</DependentUpon>
+    </None>
+    <None Include="vehiculosrentados.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>vehiculosrentados.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="vehiculosrentados.xss">
+      <DependentUpon>vehiculosrentados.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -394,6 +424,17 @@
     </None>
     <None Include="rentCarDataSet2.xss">
       <DependentUpon>rentCarDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="rentCarDataSet3.xsc">
+      <DependentUpon>rentCarDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="rentCarDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>rentCarDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="rentCarDataSet3.xss">
+      <DependentUpon>rentCarDataSet3.xsd</DependentUpon>
     </None>
     <None Include="rentCarDataSetAct.xsc">
       <DependentUpon>rentCarDataSetAct.xsd</DependentUpon>
@@ -468,6 +509,7 @@
       <DependentUpon>RentCar.edmx</DependentUpon>
       <LastGenOutput>RentCar.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\Network-Panel-Settings-icon.png" />
     <None Include="Resources\Undo-icon.png" />
     <None Include="Resources\car-icon.png" />
     <None Include="Resources\Product-sale-report-icon.png" />

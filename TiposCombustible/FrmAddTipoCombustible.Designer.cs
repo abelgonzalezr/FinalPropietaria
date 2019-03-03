@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnback = new System.Windows.Forms.Button();
             this.btnsave = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -46,6 +46,13 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(57, 39);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(204, 20);
+            this.txtNombre.TabIndex = 1;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -54,13 +61,6 @@
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre";
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(57, 39);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(204, 20);
-            this.txtNombre.TabIndex = 1;
             // 
             // btnback
             // 
@@ -90,7 +90,7 @@
             this.Controls.Add(this.btnback);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmAddTipoCombustible";
-            this.Text = "FrmAddTipoCombustible";
+            this.Text = "Añadir Combustible";
             this.Load += new System.EventHandler(this.FrmAddTipoCombustible_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

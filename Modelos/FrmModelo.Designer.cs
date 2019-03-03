@@ -30,24 +30,24 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.dataGridModelo = new System.Windows.Forms.DataGridView();
-            this.rentcarddatasetUltimate = new RentCarGonzalez.RentcarddatasetUltimate();
-            this.modeloBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.modeloTableAdapter = new RentCarGonzalez.RentcarddatasetUltimateTableAdapters.ModeloTableAdapter();
             this.idModeloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idMarcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estadoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.modeloBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rentcarddatasetUltimate = new RentCarGonzalez.RentcarddatasetUltimate();
+            this.modeloTableAdapter = new RentCarGonzalez.RentcarddatasetUltimateTableAdapters.ModeloTableAdapter();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridModelo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentcarddatasetUltimate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.modeloBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentcarddatasetUltimate)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -61,22 +61,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Buscar";
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Location = new System.Drawing.Point(54, 20);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(391, 20);
-            this.txtBuscar.TabIndex = 1;
-            // 
             // btnBuscar
             // 
             this.btnBuscar.Image = global::RentCarGonzalez.Properties.Resources.search_icon1;
@@ -86,6 +70,22 @@
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(54, 20);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(391, 20);
+            this.txtBuscar.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Buscar";
             // 
             // dataGridModelo
             // 
@@ -104,20 +104,6 @@
             this.dataGridModelo.ReadOnly = true;
             this.dataGridModelo.Size = new System.Drawing.Size(445, 150);
             this.dataGridModelo.TabIndex = 1;
-            // 
-            // rentcarddatasetUltimate
-            // 
-            this.rentcarddatasetUltimate.DataSetName = "RentcarddatasetUltimate";
-            this.rentcarddatasetUltimate.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // modeloBindingSource
-            // 
-            this.modeloBindingSource.DataMember = "Modelo";
-            this.modeloBindingSource.DataSource = this.rentcarddatasetUltimate;
-            // 
-            // modeloTableAdapter
-            // 
-            this.modeloTableAdapter.ClearBeforeFill = true;
             // 
             // idModeloDataGridViewTextBoxColumn
             // 
@@ -146,6 +132,20 @@
             this.estadoDataGridViewCheckBoxColumn.HeaderText = "estado";
             this.estadoDataGridViewCheckBoxColumn.Name = "estadoDataGridViewCheckBoxColumn";
             this.estadoDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // modeloBindingSource
+            // 
+            this.modeloBindingSource.DataMember = "Modelo";
+            this.modeloBindingSource.DataSource = this.rentcarddatasetUltimate;
+            // 
+            // rentcarddatasetUltimate
+            // 
+            this.rentcarddatasetUltimate.DataSetName = "RentcarddatasetUltimate";
+            this.rentcarddatasetUltimate.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // modeloTableAdapter
+            // 
+            this.modeloTableAdapter.ClearBeforeFill = true;
             // 
             // btnAdd
             // 
@@ -188,13 +188,13 @@
             this.Controls.Add(this.dataGridModelo);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmModelo";
-            this.Text = "FrmModelo";
+            this.Text = "Modelo";
             this.Load += new System.EventHandler(this.FrmModelo_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridModelo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentcarddatasetUltimate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.modeloBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentcarddatasetUltimate)).EndInit();
             this.ResumeLayout(false);
 
         }

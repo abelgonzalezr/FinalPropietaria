@@ -30,25 +30,25 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblMarca = new System.Windows.Forms.Label();
-            this.comboMarca = new System.Windows.Forms.ComboBox();
-            this.rentcarddatasetUltimate = new RentCarGonzalez.RentcarddatasetUltimate();
-            this.marcasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.marcasTableAdapter = new RentCarGonzalez.RentcarddatasetUltimateTableAdapters.MarcasTableAdapter();
-            this.comboEstado = new System.Windows.Forms.ComboBox();
-            this.rentCarDataSet2 = new RentCarGonzalez.rentCarDataSet2();
-            this.estadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.estadosTableAdapter = new RentCarGonzalez.rentCarDataSet2TableAdapters.estadosTableAdapter();
             this.label2 = new System.Windows.Forms.Label();
+            this.comboEstado = new System.Windows.Forms.ComboBox();
+            this.estadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rentCarDataSet2 = new RentCarGonzalez.rentCarDataSet2();
+            this.comboMarca = new System.Windows.Forms.ComboBox();
+            this.marcasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rentcarddatasetUltimate = new RentCarGonzalez.RentcarddatasetUltimate();
+            this.lblMarca = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.marcasTableAdapter = new RentCarGonzalez.RentcarddatasetUltimateTableAdapters.MarcasTableAdapter();
+            this.estadosTableAdapter = new RentCarGonzalez.rentCarDataSet2TableAdapters.estadosTableAdapter();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rentcarddatasetUltimate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estadosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentcarddatasetUltimate)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -65,30 +65,36 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // txtNombre
+            // label2
             // 
-            this.txtNombre.Location = new System.Drawing.Point(70, 39);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(207, 20);
-            this.txtNombre.TabIndex = 0;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(24, 118);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Estado";
             // 
-            // label1
+            // comboEstado
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Nombre";
+            this.comboEstado.DataSource = this.estadosBindingSource;
+            this.comboEstado.DisplayMember = "Nombre";
+            this.comboEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboEstado.FormattingEnabled = true;
+            this.comboEstado.Location = new System.Drawing.Point(70, 118);
+            this.comboEstado.Name = "comboEstado";
+            this.comboEstado.Size = new System.Drawing.Size(207, 21);
+            this.comboEstado.TabIndex = 4;
+            this.comboEstado.ValueMember = "value";
             // 
-            // lblMarca
+            // estadosBindingSource
             // 
-            this.lblMarca.AutoSize = true;
-            this.lblMarca.Location = new System.Drawing.Point(24, 79);
-            this.lblMarca.Name = "lblMarca";
-            this.lblMarca.Size = new System.Drawing.Size(37, 13);
-            this.lblMarca.TabIndex = 2;
-            this.lblMarca.Text = "Marca";
+            this.estadosBindingSource.DataMember = "estados";
+            this.estadosBindingSource.DataSource = this.rentCarDataSet2;
+            // 
+            // rentCarDataSet2
+            // 
+            this.rentCarDataSet2.DataSetName = "rentCarDataSet2";
+            this.rentCarDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // comboMarca
             // 
@@ -101,54 +107,48 @@
             this.comboMarca.TabIndex = 3;
             this.comboMarca.ValueMember = "IdMarca";
             // 
-            // rentcarddatasetUltimate
-            // 
-            this.rentcarddatasetUltimate.DataSetName = "RentcarddatasetUltimate";
-            this.rentcarddatasetUltimate.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // marcasBindingSource
             // 
             this.marcasBindingSource.DataMember = "Marcas";
             this.marcasBindingSource.DataSource = this.rentcarddatasetUltimate;
             // 
+            // rentcarddatasetUltimate
+            // 
+            this.rentcarddatasetUltimate.DataSetName = "RentcarddatasetUltimate";
+            this.rentcarddatasetUltimate.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lblMarca
+            // 
+            this.lblMarca.AutoSize = true;
+            this.lblMarca.Location = new System.Drawing.Point(24, 79);
+            this.lblMarca.Name = "lblMarca";
+            this.lblMarca.Size = new System.Drawing.Size(37, 13);
+            this.lblMarca.TabIndex = 2;
+            this.lblMarca.Text = "Marca";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(24, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Nombre";
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(70, 39);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(207, 20);
+            this.txtNombre.TabIndex = 0;
+            // 
             // marcasTableAdapter
             // 
             this.marcasTableAdapter.ClearBeforeFill = true;
             // 
-            // comboEstado
-            // 
-            this.comboEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboEstado.DataSource = this.estadosBindingSource;
-            this.comboEstado.DisplayMember = "Nombre";
-            this.comboEstado.FormattingEnabled = true;
-            this.comboEstado.Location = new System.Drawing.Point(70, 118);
-            this.comboEstado.Name = "comboEstado";
-            this.comboEstado.Size = new System.Drawing.Size(207, 21);
-            this.comboEstado.TabIndex = 4;
-            this.comboEstado.ValueMember = "value";
-            // 
-            // rentCarDataSet2
-            // 
-            this.rentCarDataSet2.DataSetName = "rentCarDataSet2";
-            this.rentCarDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // estadosBindingSource
-            // 
-            this.estadosBindingSource.DataMember = "estados";
-            this.estadosBindingSource.DataSource = this.rentCarDataSet2;
-            // 
             // estadosTableAdapter
             // 
             this.estadosTableAdapter.ClearBeforeFill = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 118);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Estado";
             // 
             // btnBack
             // 
@@ -178,14 +178,14 @@
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmAddModelo";
-            this.Text = "FrmAddModelo";
+            this.Text = "Añadir Modelo";
             this.Load += new System.EventHandler(this.FrmAddModelo_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rentcarddatasetUltimate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.estadosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentcarddatasetUltimate)).EndInit();
             this.ResumeLayout(false);
 
         }

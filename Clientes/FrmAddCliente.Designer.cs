@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtcedula = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -41,8 +43,6 @@
             this.rentCarDataSet2 = new RentCarGonzalez.rentCarDataSet();
             this.vehiculosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vehiculosTableAdapter1 = new RentCarGonzalez.rentCarDataSetTableAdapters.vehiculosTableAdapter();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtcedula = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehiculosBindingSource)).BeginInit();
@@ -64,6 +64,22 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del cliente";
+            // 
+            // txtcedula
+            // 
+            this.txtcedula.Location = new System.Drawing.Point(101, 115);
+            this.txtcedula.Name = "txtcedula";
+            this.txtcedula.Size = new System.Drawing.Size(248, 20);
+            this.txtcedula.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(30, 115);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Cedula";
             // 
             // txtDireccion
             // 
@@ -147,22 +163,6 @@
             // 
             this.vehiculosTableAdapter1.ClearBeforeFill = true;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(30, 115);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Cedula";
-            // 
-            // txtcedula
-            // 
-            this.txtcedula.Location = new System.Drawing.Point(101, 115);
-            this.txtcedula.Name = "txtcedula";
-            this.txtcedula.Size = new System.Drawing.Size(248, 20);
-            this.txtcedula.TabIndex = 8;
-            // 
             // FrmAddCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -172,7 +172,7 @@
             this.Controls.Add(this.btnsave);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmAddCliente";
-            this.Text = "Cliente";
+            this.Text = "Añadir cliente";
             this.Load += new System.EventHandler(this.FrmAddCliente_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

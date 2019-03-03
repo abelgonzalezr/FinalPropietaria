@@ -33,6 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnInspeccion = new System.Windows.Forms.Button();
             this.btndevolucion = new System.Windows.Forms.Button();
             this.btnModelo = new System.Windows.Forms.Button();
             this.btnEmpleado = new System.Windows.Forms.Button();
@@ -100,6 +101,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnInspeccion);
             this.groupBox2.Controls.Add(this.btndevolucion);
             this.groupBox2.Controls.Add(this.btnModelo);
             this.groupBox2.Controls.Add(this.btnEmpleado);
@@ -116,6 +118,15 @@
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             // 
+            // btnInspeccion
+            // 
+            this.btnInspeccion.Image = global::RentCarGonzalez.Properties.Resources.Network_Panel_Settings_icon;
+            this.btnInspeccion.Location = new System.Drawing.Point(245, 163);
+            this.btnInspeccion.Name = "btnInspeccion";
+            this.btnInspeccion.Size = new System.Drawing.Size(131, 108);
+            this.btnInspeccion.TabIndex = 12;
+            this.btnInspeccion.UseVisualStyleBackColor = true;
+            // 
             // btndevolucion
             // 
             this.btndevolucion.Image = global::RentCarGonzalez.Properties.Resources.Undo_icon;
@@ -124,6 +135,7 @@
             this.btndevolucion.Size = new System.Drawing.Size(130, 90);
             this.btndevolucion.TabIndex = 11;
             this.btndevolucion.UseVisualStyleBackColor = true;
+            this.btndevolucion.Click += new System.EventHandler(this.btndevolucion_Click);
             // 
             // btnModelo
             // 
@@ -138,9 +150,9 @@
             // btnEmpleado
             // 
             this.btnEmpleado.Image = global::RentCarGonzalez.Properties.Resources.Preppy_icon;
-            this.btnEmpleado.Location = new System.Drawing.Point(448, 172);
+            this.btnEmpleado.Location = new System.Drawing.Point(448, 163);
             this.btnEmpleado.Name = "btnEmpleado";
-            this.btnEmpleado.Size = new System.Drawing.Size(130, 90);
+            this.btnEmpleado.Size = new System.Drawing.Size(130, 108);
             this.btnEmpleado.TabIndex = 9;
             this.btnEmpleado.UseVisualStyleBackColor = true;
             this.btnEmpleado.Click += new System.EventHandler(this.button8_Click);
@@ -168,9 +180,9 @@
             // btnCombustible
             // 
             this.btnCombustible.Image = global::RentCarGonzalez.Properties.Resources._42568_fuel_pump_icon__1_;
-            this.btnCombustible.Location = new System.Drawing.Point(37, 172);
+            this.btnCombustible.Location = new System.Drawing.Point(37, 163);
             this.btnCombustible.Name = "btnCombustible";
-            this.btnCombustible.Size = new System.Drawing.Size(131, 90);
+            this.btnCombustible.Size = new System.Drawing.Size(131, 108);
             this.btnCombustible.TabIndex = 6;
             this.btnCombustible.UseVisualStyleBackColor = true;
             this.btnCombustible.Click += new System.EventHandler(this.button5_Click);
@@ -251,6 +263,7 @@
         private System.Windows.Forms.Button btnEmpleado;
         private System.Windows.Forms.Button btnModelo;
         private System.Windows.Forms.Button btndevolucion;
+        private System.Windows.Forms.Button btnInspeccion;
     }
 }
 

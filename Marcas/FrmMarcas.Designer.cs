@@ -30,21 +30,21 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.rentCarDataSet = new RentCarGonzalez.rentCarDataSet();
-            this.marcasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.marcasTableAdapter = new RentCarGonzalez.rentCarDataSetTableAdapters.MarcasTableAdapter();
             this.idMarcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marcasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rentCarDataSet = new RentCarGonzalez.rentCarDataSet();
+            this.marcasTableAdapter = new RentCarGonzalez.rentCarDataSetTableAdapters.MarcasTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.Buscar = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtbuscar = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
+            this.txtbuscar = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSet)).BeginInit();
             this.Buscar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,20 +64,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(242, 157);
             this.dataGridView1.TabIndex = 0;
             // 
-            // rentCarDataSet
-            // 
-            this.rentCarDataSet.DataSetName = "rentCarDataSet";
-            this.rentCarDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // marcasBindingSource
-            // 
-            this.marcasBindingSource.DataMember = "Marcas";
-            this.marcasBindingSource.DataSource = this.rentCarDataSet;
-            // 
-            // marcasTableAdapter
-            // 
-            this.marcasTableAdapter.ClearBeforeFill = true;
-            // 
             // idMarcaDataGridViewTextBoxColumn
             // 
             this.idMarcaDataGridViewTextBoxColumn.DataPropertyName = "IdMarca";
@@ -91,6 +77,20 @@
             this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
             this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
             this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // marcasBindingSource
+            // 
+            this.marcasBindingSource.DataMember = "Marcas";
+            this.marcasBindingSource.DataSource = this.rentCarDataSet;
+            // 
+            // rentCarDataSet
+            // 
+            this.rentCarDataSet.DataSetName = "rentCarDataSet";
+            this.rentCarDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // marcasTableAdapter
+            // 
+            this.marcasTableAdapter.ClearBeforeFill = true;
             // 
             // button1
             // 
@@ -133,22 +133,6 @@
             this.Buscar.TabIndex = 4;
             this.Buscar.TabStop = false;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Buscar";
-            // 
-            // txtbuscar
-            // 
-            this.txtbuscar.Location = new System.Drawing.Point(53, 20);
-            this.txtbuscar.Name = "txtbuscar";
-            this.txtbuscar.Size = new System.Drawing.Size(189, 20);
-            this.txtbuscar.TabIndex = 1;
-            // 
             // button4
             // 
             this.button4.Image = global::RentCarGonzalez.Properties.Resources.search_icon1;
@@ -158,6 +142,22 @@
             this.button4.TabIndex = 2;
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // txtbuscar
+            // 
+            this.txtbuscar.Location = new System.Drawing.Point(53, 20);
+            this.txtbuscar.Name = "txtbuscar";
+            this.txtbuscar.Size = new System.Drawing.Size(189, 20);
+            this.txtbuscar.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Buscar";
             // 
             // FrmMarcas
             // 
@@ -170,11 +170,11 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "FrmMarcas";
-            this.Text = "FrmMarcas";
+            this.Text = "Marcas";
             this.Load += new System.EventHandler(this.FrmMarcas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSet)).EndInit();
             this.Buscar.ResumeLayout(false);
             this.Buscar.PerformLayout();
             this.ResumeLayout(false);

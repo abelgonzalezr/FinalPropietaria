@@ -46,9 +46,6 @@
             this.rentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rentaTableAdapter = new RentCarGonzalez.rentCarDataSetActTableAdapters.RentaTableAdapter();
             this.dataGridReporte = new System.Windows.Forms.DataGridView();
-            this.rentCarDataSet1 = new RentCarGonzalez.rentCarDataSet1();
-            this.reportevehiculosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.reportevehiculosTableAdapter = new RentCarGonzalez.rentCarDataSet1TableAdapters.ReportevehiculosTableAdapter();
             this.vehiculoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.combustibleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.marcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,14 +53,17 @@
             this.detalleRentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaRentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reportevehiculosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rentCarDataSet1 = new RentCarGonzalez.rentCarDataSet1();
+            this.reportevehiculosTableAdapter = new RentCarGonzalez.rentCarDataSet1TableAdapters.ReportevehiculosTableAdapter();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSetAct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rentaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReporte)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportevehiculosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -224,20 +224,6 @@
             this.dataGridReporte.Size = new System.Drawing.Size(746, 150);
             this.dataGridReporte.TabIndex = 1;
             // 
-            // rentCarDataSet1
-            // 
-            this.rentCarDataSet1.DataSetName = "rentCarDataSet1";
-            this.rentCarDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // reportevehiculosBindingSource
-            // 
-            this.reportevehiculosBindingSource.DataMember = "Reportevehiculos";
-            this.reportevehiculosBindingSource.DataSource = this.rentCarDataSet1;
-            // 
-            // reportevehiculosTableAdapter
-            // 
-            this.reportevehiculosTableAdapter.ClearBeforeFill = true;
-            // 
             // vehiculoDataGridViewTextBoxColumn
             // 
             this.vehiculoDataGridViewTextBoxColumn.DataPropertyName = "Vehiculo";
@@ -287,6 +273,20 @@
             this.clienteDataGridViewTextBoxColumn.Name = "clienteDataGridViewTextBoxColumn";
             this.clienteDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // reportevehiculosBindingSource
+            // 
+            this.reportevehiculosBindingSource.DataMember = "Reportevehiculos";
+            this.reportevehiculosBindingSource.DataSource = this.rentCarDataSet1;
+            // 
+            // rentCarDataSet1
+            // 
+            this.rentCarDataSet1.DataSetName = "rentCarDataSet1";
+            this.rentCarDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // reportevehiculosTableAdapter
+            // 
+            this.reportevehiculosTableAdapter.ClearBeforeFill = true;
+            // 
             // ReportesRentCar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -295,7 +295,7 @@
             this.Controls.Add(this.dataGridReporte);
             this.Controls.Add(this.groupBox1);
             this.Name = "ReportesRentCar";
-            this.Text = "ReportesRentCar";
+            this.Text = "Reportes";
             this.Load += new System.EventHandler(this.ReportesRentCar_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -304,8 +304,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSetAct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rentaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReporte)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportevehiculosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }

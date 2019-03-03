@@ -30,18 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboestado = new System.Windows.Forms.ComboBox();
+            this.estadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rentCarDataSet2 = new RentCarGonzalez.rentCarDataSet2();
+            this.label2 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnsave = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboestado = new System.Windows.Forms.ComboBox();
-            this.rentCarDataSet2 = new RentCarGonzalez.rentCarDataSet2();
-            this.estadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.estadosTableAdapter = new RentCarGonzalez.rentCarDataSet2TableAdapters.estadosTableAdapter();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estadosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -55,6 +55,37 @@
             this.groupBox1.Size = new System.Drawing.Size(388, 132);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // comboestado
+            // 
+            this.comboestado.DataSource = this.estadosBindingSource;
+            this.comboestado.DisplayMember = "Nombre";
+            this.comboestado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboestado.FormattingEnabled = true;
+            this.comboestado.Location = new System.Drawing.Point(107, 69);
+            this.comboestado.Name = "comboestado";
+            this.comboestado.Size = new System.Drawing.Size(259, 21);
+            this.comboestado.TabIndex = 3;
+            this.comboestado.ValueMember = "value";
+            // 
+            // estadosBindingSource
+            // 
+            this.estadosBindingSource.DataMember = "estados";
+            this.estadosBindingSource.DataSource = this.rentCarDataSet2;
+            // 
+            // rentCarDataSet2
+            // 
+            this.rentCarDataSet2.DataSetName = "rentCarDataSet2";
+            this.rentCarDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(60, 78);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Estado";
             // 
             // txtNombre
             // 
@@ -91,37 +122,6 @@
             this.btnsave.UseVisualStyleBackColor = true;
             this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(60, 78);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Estado";
-            // 
-            // comboestado
-            // 
-            this.comboestado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboestado.DataSource = this.estadosBindingSource;
-            this.comboestado.DisplayMember = "Nombre";
-            this.comboestado.FormattingEnabled = true;
-            this.comboestado.Location = new System.Drawing.Point(107, 69);
-            this.comboestado.Name = "comboestado";
-            this.comboestado.Size = new System.Drawing.Size(259, 21);
-            this.comboestado.TabIndex = 3;
-            this.comboestado.ValueMember = "value";
-            // 
-            // rentCarDataSet2
-            // 
-            this.rentCarDataSet2.DataSetName = "rentCarDataSet2";
-            this.rentCarDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // estadosBindingSource
-            // 
-            this.estadosBindingSource.DataMember = "estados";
-            this.estadosBindingSource.DataSource = this.rentCarDataSet2;
-            // 
             // estadosTableAdapter
             // 
             this.estadosTableAdapter.ClearBeforeFill = true;
@@ -135,12 +135,12 @@
             this.Controls.Add(this.btnsave);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmAddMarcas";
-            this.Text = "FrmAddMarcas";
+            this.Text = "Añadir Marca";
             this.Load += new System.EventHandler(this.FrmAddMarcas_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.estadosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSet2)).EndInit();
             this.ResumeLayout(false);
 
         }

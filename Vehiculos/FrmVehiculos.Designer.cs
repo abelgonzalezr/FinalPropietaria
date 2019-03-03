@@ -30,25 +30,25 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.datGridVehiculos = new System.Windows.Forms.DataGridView();
-            this.rentCarDataSet = new RentCarGonzalez.rentCarDataSet();
-            this.vehiculosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.vehiculosTableAdapter = new RentCarGonzalez.rentCarDataSetTableAdapters.vehiculosTableAdapter();
             this.idVehiculosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idMarcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idTipoVehiculoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idCombustibleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vehiculosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rentCarDataSet = new RentCarGonzalez.rentCarDataSet();
+            this.vehiculosTableAdapter = new RentCarGonzalez.rentCarDataSetTableAdapters.vehiculosTableAdapter();
             this.btnadd = new System.Windows.Forms.Button();
             this.btnedit = new System.Windows.Forms.Button();
             this.btndelete = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datGridVehiculos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehiculosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -62,22 +62,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Buscar";
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Location = new System.Drawing.Point(52, 27);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(464, 20);
-            this.txtBuscar.TabIndex = 1;
-            // 
             // btnBuscar
             // 
             this.btnBuscar.Image = global::RentCarGonzalez.Properties.Resources.search_icon1;
@@ -87,6 +71,22 @@
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(52, 27);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(464, 20);
+            this.txtBuscar.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Buscar";
             // 
             // datGridVehiculos
             // 
@@ -106,20 +106,6 @@
             this.datGridVehiculos.ReadOnly = true;
             this.datGridVehiculos.Size = new System.Drawing.Size(546, 150);
             this.datGridVehiculos.TabIndex = 1;
-            // 
-            // rentCarDataSet
-            // 
-            this.rentCarDataSet.DataSetName = "rentCarDataSet";
-            this.rentCarDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // vehiculosBindingSource
-            // 
-            this.vehiculosBindingSource.DataMember = "vehiculos";
-            this.vehiculosBindingSource.DataSource = this.rentCarDataSet;
-            // 
-            // vehiculosTableAdapter
-            // 
-            this.vehiculosTableAdapter.ClearBeforeFill = true;
             // 
             // idVehiculosDataGridViewTextBoxColumn
             // 
@@ -155,6 +141,20 @@
             this.idCombustibleDataGridViewTextBoxColumn.HeaderText = "IdCombustible";
             this.idCombustibleDataGridViewTextBoxColumn.Name = "idCombustibleDataGridViewTextBoxColumn";
             this.idCombustibleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // vehiculosBindingSource
+            // 
+            this.vehiculosBindingSource.DataMember = "vehiculos";
+            this.vehiculosBindingSource.DataSource = this.rentCarDataSet;
+            // 
+            // rentCarDataSet
+            // 
+            this.rentCarDataSet.DataSetName = "rentCarDataSet";
+            this.rentCarDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vehiculosTableAdapter
+            // 
+            this.vehiculosTableAdapter.ClearBeforeFill = true;
             // 
             // btnadd
             // 
@@ -197,13 +197,13 @@
             this.Controls.Add(this.datGridVehiculos);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmVehiculos";
-            this.Text = "FrmVehiculos";
+            this.Text = "Vehiculos";
             this.Load += new System.EventHandler(this.FrmVehiculos_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datGridVehiculos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehiculosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

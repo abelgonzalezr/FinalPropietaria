@@ -38,24 +38,24 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.rentCarDataSetAct = new RentCarGonzalez.rentCarDataSetAct();
             this.dataGridClientes = new System.Windows.Forms.DataGridView();
-            this.clientesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.clientesTableAdapter2 = new RentCarGonzalez.rentCarDataSetActTableAdapters.ClientesTableAdapter();
-            this.datasetCedula = new RentCarGonzalez.DatasetCedula();
-            this.datasetCedulaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clientesTableAdapter1 = new RentCarGonzalez.DatasetCedulaTableAdapters.ClientesTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cedulaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.datasetCedulaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.datasetCedula = new RentCarGonzalez.DatasetCedula();
+            this.clientesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.clientesTableAdapter2 = new RentCarGonzalez.rentCarDataSetActTableAdapters.ClientesTableAdapter();
+            this.clientesTableAdapter1 = new RentCarGonzalez.DatasetCedulaTableAdapters.ClientesTableAdapter();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSetAct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridClientes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datasetCedula)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datasetCedulaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datasetCedulaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datasetCedula)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -148,34 +148,6 @@
             this.dataGridClientes.Size = new System.Drawing.Size(546, 150);
             this.dataGridClientes.TabIndex = 8;
             // 
-            // clientesBindingSource2
-            // 
-            this.clientesBindingSource2.DataMember = "Clientes";
-            this.clientesBindingSource2.DataSource = this.rentCarDataSetAct;
-            // 
-            // clientesTableAdapter2
-            // 
-            this.clientesTableAdapter2.ClearBeforeFill = true;
-            // 
-            // datasetCedula
-            // 
-            this.datasetCedula.DataSetName = "DatasetCedula";
-            this.datasetCedula.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // datasetCedulaBindingSource
-            // 
-            this.datasetCedulaBindingSource.DataSource = this.datasetCedula;
-            this.datasetCedulaBindingSource.Position = 0;
-            // 
-            // clientesBindingSource
-            // 
-            this.clientesBindingSource.DataMember = "Clientes";
-            this.clientesBindingSource.DataSource = this.datasetCedulaBindingSource;
-            // 
-            // clientesTableAdapter1
-            // 
-            this.clientesTableAdapter1.ClearBeforeFill = true;
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "IdCliente";
@@ -211,6 +183,34 @@
             this.cedulaDataGridViewTextBoxColumn.Name = "cedulaDataGridViewTextBoxColumn";
             this.cedulaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // clientesBindingSource
+            // 
+            this.clientesBindingSource.DataMember = "Clientes";
+            this.clientesBindingSource.DataSource = this.datasetCedulaBindingSource;
+            // 
+            // datasetCedulaBindingSource
+            // 
+            this.datasetCedulaBindingSource.DataSource = this.datasetCedula;
+            this.datasetCedulaBindingSource.Position = 0;
+            // 
+            // datasetCedula
+            // 
+            this.datasetCedula.DataSetName = "DatasetCedula";
+            this.datasetCedula.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // clientesBindingSource2
+            // 
+            this.clientesBindingSource2.DataMember = "Clientes";
+            this.clientesBindingSource2.DataSource = this.rentCarDataSetAct;
+            // 
+            // clientesTableAdapter2
+            // 
+            this.clientesTableAdapter2.ClearBeforeFill = true;
+            // 
+            // clientesTableAdapter1
+            // 
+            this.clientesTableAdapter1.ClearBeforeFill = true;
+            // 
             // FrmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -222,16 +222,16 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmClientes";
-            this.Text = "FrmClientes";
+            this.Text = "Clientes";
             this.Load += new System.EventHandler(this.FrmClientes_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSetAct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridClientes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datasetCedula)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datasetCedulaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datasetCedulaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datasetCedula)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource2)).EndInit();
             this.ResumeLayout(false);
 
         }

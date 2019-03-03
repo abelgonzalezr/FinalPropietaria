@@ -1,4 +1,5 @@
 ﻿using RentCarGonzalez.Clientes;
+using RentCarGonzalez.Devoluciones;
 using RentCarGonzalez.Empleados;
 using RentCarGonzalez.Marcas;
 using RentCarGonzalez.Modelos;
@@ -43,10 +44,16 @@ namespace RentCarGonzalez
             btnReportes.Visible = false;
             btnTipoVehiculo.Visible = false;
             btnVehiculos.Visible = false;
+            btnInspeccion.Visible = false;
 
             if (comboBox1.SelectedItem.ToString() == "Modelos")
             {
                 btnModelo.Visible = true;
+
+            }
+            if (comboBox1.SelectedItem.ToString() == "Inspección")
+            {
+                btnInspeccion.Visible = true;
 
             }
             if (comboBox1.SelectedItem.ToString() == "Clientes")
@@ -99,6 +106,7 @@ namespace RentCarGonzalez
                 btnReportes.Visible = true;
                 btnTipoVehiculo.Visible = true;
                 btnVehiculos.Visible = true;
+                btnInspeccion.Visible = true;
             }
             groupBox2.Text = "Hacer gestion de "+comboBox1.Text;
         }
@@ -159,5 +167,12 @@ namespace RentCarGonzalez
             FrmModelo fed = new FrmModelo();
             fed.ShowDialog();
         }
+
+        private void btndevolucion_Click(object sender, EventArgs e)
+        {
+            btnBack fed = new btnBack();
+            fed.ShowDialog();
+        }
+
     }
 }
