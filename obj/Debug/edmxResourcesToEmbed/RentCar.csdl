@@ -25,6 +25,7 @@
     <Property Name="tandaLaboral" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="porcientocomision" Type="Int32" />
     <Property Name="fechaingreso" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="procesoInspeccion" Relationship="rentCarModel.FK_procesoInspeccion_Empleado" FromRole="Empleado" ToRole="procesoInspeccion" />
   </EntityType>
   <EntityType Name="Marca">
     <Key>
@@ -53,6 +54,17 @@
     <Property Name="IdInspeccion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="IdVehiculo" Type="Int32" Nullable="false" />
     <Property Name="detalleInspeccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tieneRalladura" Type="Boolean" />
+    <Property Name="CantidadCombustible" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TieneGomarepuesta" Type="Boolean" />
+    <Property Name="TieneGato" Type="Boolean" />
+    <Property Name="TieneRoturasCristal" Type="Boolean" />
+    <Property Name="estadoGoma" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Fecha" Type="DateTime" Precision="3" />
+    <Property Name="idempleado" Type="Int32" />
+    <Property Name="estado" Type="Boolean" />
+    <NavigationProperty Name="Empleado" Relationship="rentCarModel.FK_procesoInspeccion_Empleado" FromRole="procesoInspeccion" ToRole="Empleado" />
+    <NavigationProperty Name="vehiculo" Relationship="rentCarModel.FK_procesoInspeccion_vehiculos" FromRole="procesoInspeccion" ToRole="vehiculo" />
   </EntityType>
   <EntityType Name="Renta">
     <Key>
@@ -68,6 +80,7 @@
     <Property Name="FechaDevolucion" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="montopordia" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="CantidadDias" Type="Int32" />
+    <Property Name="estado" Type="Boolean" />
   </EntityType>
   <EntityType Name="tiposDeCombustible">
     <Key>
@@ -106,6 +119,7 @@
     <Property Name="nomotor" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="noplaca" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="estado" Type="Boolean" />
+    <NavigationProperty Name="procesoInspeccions" Relationship="rentCarModel.FK_procesoInspeccion_vehiculos" FromRole="vehiculo" ToRole="procesoInspeccion" />
   </EntityType>
   <EntityType Name="Devolucion">
     <Key>
@@ -215,6 +229,16 @@
       <End Role="vehiculo" EntitySet="vehiculos" />
       <End Role="Renta" EntitySet="Rentas" />
     </AssociationSet>
+    <EntitySet Name="Reportes" EntityType="rentCarModel.Reporte" />
+    <EntitySet Name="VehiculosRentados" EntityType="rentCarModel.VehiculosRentado" />
+    <AssociationSet Name="FK_procesoInspeccion_Empleado" Association="rentCarModel.FK_procesoInspeccion_Empleado">
+      <End Role="Empleado" EntitySet="Empleadoes" />
+      <End Role="procesoInspeccion" EntitySet="procesoInspeccions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_procesoInspeccion_vehiculos" Association="rentCarModel.FK_procesoInspeccion_vehiculos">
+      <End Role="vehiculo" EntitySet="vehiculos" />
+      <End Role="procesoInspeccion" EntitySet="procesoInspeccions" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Reportevehiculo">
     <Key>
@@ -241,6 +265,57 @@
         <PropertyRef Name="IdVehiculos" />
       </Principal>
       <Dependent Role="Renta">
+        <PropertyRef Name="IdVehiculo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Reporte">
+    <Key>
+      <PropertyRef Name="FechaRenta" />
+      <PropertyRef Name="DetalleRenta" />
+      <PropertyRef Name="Modelo" />
+      <PropertyRef Name="Marca" />
+      <PropertyRef Name="Combustible" />
+      <PropertyRef Name="Cliente" />
+    </Key>
+    <Property Name="FechaRenta" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DetalleRenta" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="NombreVehiculo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Modelo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Marca" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Combustible" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Cliente" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="VehiculosRentado">
+    <Key>
+      <PropertyRef Name="IdRenta" />
+      <PropertyRef Name="IdVehiculos" />
+    </Key>
+    <Property Name="IdRenta" Type="Int32" Nullable="false" />
+    <Property Name="nombreVehiculo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="estado" Type="Boolean" />
+    <Property Name="IdVehiculos" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_procesoInspeccion_Empleado">
+    <End Type="rentCarModel.Empleado" Role="Empleado" Multiplicity="1" />
+    <End Type="rentCarModel.procesoInspeccion" Role="procesoInspeccion" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="IdEmpleado" />
+      </Principal>
+      <Dependent Role="procesoInspeccion">
+        <PropertyRef Name="IdInspeccion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_procesoInspeccion_vehiculos">
+    <End Type="rentCarModel.vehiculo" Role="vehiculo" Multiplicity="1" />
+    <End Type="rentCarModel.procesoInspeccion" Role="procesoInspeccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vehiculo">
+        <PropertyRef Name="IdVehiculos" />
+      </Principal>
+      <Dependent Role="procesoInspeccion">
         <PropertyRef Name="IdVehiculo" />
       </Dependent>
     </ReferentialConstraint>

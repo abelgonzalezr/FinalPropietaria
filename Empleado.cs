@@ -22,5 +22,7 @@ namespace RentCarGonzalez
         public string tandaLaboral { get; set; }
         public Nullable<int> porcientocomision { get; set; }
         public Nullable<System.DateTime> fechaingreso { get; set; }
+    
+        public virtual procesoInspeccion procesoInspeccion { get; set; }
     }
 }

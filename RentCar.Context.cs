@@ -36,5 +36,7 @@ namespace RentCarGonzalez
         public virtual DbSet<vehiculo> vehiculos { get; set; }
         public virtual DbSet<Devolucion> Devolucions { get; set; }
         public virtual DbSet<Reportevehiculo> Reportevehiculos { get; set; }
+        public virtual DbSet<Reporte> Reportes { get; set; }
+        public virtual DbSet<VehiculosRentado> VehiculosRentados { get; set; }
     }
 }

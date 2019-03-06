@@ -1,6 +1,7 @@
 ﻿using RentCarGonzalez.Clientes;
 using RentCarGonzalez.Devoluciones;
 using RentCarGonzalez.Empleados;
+using RentCarGonzalez.Inspeccion;
 using RentCarGonzalez.Marcas;
 using RentCarGonzalez.Modelos;
 using RentCarGonzalez.Rentas;
@@ -174,5 +175,10 @@ namespace RentCarGonzalez
             fed.ShowDialog();
         }
 
+        private void btnInspeccion_Click(object sender, EventArgs e)
+        {
+            FrmInspeccion frm = new FrmInspeccion();
+            frm.ShowDialog();
+        }
     }
 }

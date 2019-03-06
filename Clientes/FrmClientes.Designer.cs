@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.txtSearhMarca = new System.Windows.Forms.TextBox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btndelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -61,7 +61,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnBuscar);
-            this.groupBox1.Controls.Add(this.txtSearhMarca);
+            this.groupBox1.Controls.Add(this.txtBuscar);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
@@ -77,13 +77,14 @@
             this.btnBuscar.Size = new System.Drawing.Size(55, 37);
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // txtSearhMarca
+            // txtBuscar
             // 
-            this.txtSearhMarca.Location = new System.Drawing.Point(94, 17);
-            this.txtSearhMarca.Name = "txtSearhMarca";
-            this.txtSearhMarca.Size = new System.Drawing.Size(439, 20);
-            this.txtSearhMarca.TabIndex = 1;
+            this.txtBuscar.Location = new System.Drawing.Point(94, 17);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(439, 20);
+            this.txtBuscar.TabIndex = 1;
             // 
             // label1
             // 
@@ -246,7 +247,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idVehiculosDataGridViewTextBoxColumn;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.TextBox txtSearhMarca;
+        private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btndelete;
         private System.Windows.Forms.Button btnEdit;

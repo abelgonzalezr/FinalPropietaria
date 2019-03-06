@@ -17,5 +17,17 @@ namespace RentCarGonzalez
         public int IdInspeccion { get; set; }
         public int IdVehiculo { get; set; }
         public string detalleInspeccion { get; set; }
+        public Nullable<bool> tieneRalladura { get; set; }
+        public string CantidadCombustible { get; set; }
+        public Nullable<bool> TieneGomarepuesta { get; set; }
+        public Nullable<bool> TieneGato { get; set; }
+        public Nullable<bool> TieneRoturasCristal { get; set; }
+        public string estadoGoma { get; set; }
+        public Nullable<System.DateTime> Fecha { get; set; }
+        public Nullable<int> idempleado { get; set; }
+        public Nullable<bool> estado { get; set; }
+    
+        public virtual Empleado Empleado { get; set; }
+        public virtual vehiculo vehiculo { get; set; }
     }
 }

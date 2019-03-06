@@ -31,15 +31,22 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.comboVehiculo = new System.Windows.Forms.ComboBox();
+            this.vehiculosRentadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vehiculosrentados = new RentCarGonzalez.vehiculosrentados();
             this.label2 = new System.Windows.Forms.Label();
             this.comboInspeccion = new System.Windows.Forms.ComboBox();
             this.btnsave = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.vehiculosrentados = new RentCarGonzalez.vehiculosrentados();
-            this.vehiculosRentadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vehiculosRentadosTableAdapter = new RentCarGonzalez.vehiculosrentadosTableAdapters.VehiculosRentadosTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.vehiculosrentados)).BeginInit();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboRenta = new System.Windows.Forms.ComboBox();
+            this.rentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rentCarDataSetAct = new RentCarGonzalez.rentCarDataSetAct();
+            this.rentaTableAdapter = new RentCarGonzalez.rentCarDataSetActTableAdapters.RentaTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.vehiculosRentadosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vehiculosrentados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSetAct)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -54,15 +61,22 @@
             // 
             // comboVehiculo
             // 
-            this.comboVehiculo.DataSource = this.vehiculosRentadosBindingSource;
-            this.comboVehiculo.DisplayMember = "nombreVehiculo";
             this.comboVehiculo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboVehiculo.FormattingEnabled = true;
             this.comboVehiculo.Location = new System.Drawing.Point(117, 44);
             this.comboVehiculo.Name = "comboVehiculo";
             this.comboVehiculo.Size = new System.Drawing.Size(121, 21);
             this.comboVehiculo.TabIndex = 1;
-            this.comboVehiculo.ValueMember = "IdVehiculos";
+            // 
+            // vehiculosRentadosBindingSource
+            // 
+            this.vehiculosRentadosBindingSource.DataMember = "VehiculosRentados";
+            this.vehiculosRentadosBindingSource.DataSource = this.vehiculosrentados;
+            // 
+            // vehiculosrentados
+            // 
+            this.vehiculosrentados.DataSetName = "vehiculosrentados";
+            this.vehiculosrentados.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label2
             // 
@@ -104,25 +118,53 @@
             this.button1.TabIndex = 6;
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // vehiculosrentados
-            // 
-            this.vehiculosrentados.DataSetName = "vehiculosrentados";
-            this.vehiculosrentados.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // vehiculosRentadosBindingSource
-            // 
-            this.vehiculosRentadosBindingSource.DataMember = "VehiculosRentados";
-            this.vehiculosRentadosBindingSource.DataSource = this.vehiculosrentados;
-            // 
             // vehiculosRentadosTableAdapter
             // 
             this.vehiculosRentadosTableAdapter.ClearBeforeFill = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(52, 13);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(36, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Renta";
+            // 
+            // comboRenta
+            // 
+            this.comboRenta.DataSource = this.rentaBindingSource;
+            this.comboRenta.DisplayMember = "DetalleRenta";
+            this.comboRenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboRenta.FormattingEnabled = true;
+            this.comboRenta.Location = new System.Drawing.Point(117, 4);
+            this.comboRenta.Name = "comboRenta";
+            this.comboRenta.Size = new System.Drawing.Size(121, 21);
+            this.comboRenta.TabIndex = 8;
+            this.comboRenta.ValueMember = "IdVehiculo";
+            this.comboRenta.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // rentaBindingSource
+            // 
+            this.rentaBindingSource.DataMember = "Renta";
+            this.rentaBindingSource.DataSource = this.rentCarDataSetAct;
+            // 
+            // rentCarDataSetAct
+            // 
+            this.rentCarDataSetAct.DataSetName = "rentCarDataSetAct";
+            this.rentCarDataSetAct.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // rentaTableAdapter
+            // 
+            this.rentaTableAdapter.ClearBeforeFill = true;
             // 
             // btnBack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(354, 254);
+            this.Controls.Add(this.comboRenta);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnsave);
             this.Controls.Add(this.comboInspeccion);
@@ -132,8 +174,10 @@
             this.Name = "btnBack";
             this.Text = "Devolucion";
             this.Load += new System.EventHandler(this.btnBack_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.vehiculosrentados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehiculosRentadosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vehiculosrentados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSetAct)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,5 +194,10 @@
         private vehiculosrentados vehiculosrentados;
         private System.Windows.Forms.BindingSource vehiculosRentadosBindingSource;
         private vehiculosrentadosTableAdapters.VehiculosRentadosTableAdapter vehiculosRentadosTableAdapter;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox comboRenta;
+        private rentCarDataSetAct rentCarDataSetAct;
+        private System.Windows.Forms.BindingSource rentaBindingSource;
+        private rentCarDataSetActTableAdapters.RentaTableAdapter rentaTableAdapter;
     }
 }

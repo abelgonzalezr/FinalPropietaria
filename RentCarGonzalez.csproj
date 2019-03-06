@@ -217,6 +217,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RentcarddatasetUltimate.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reporte.cs">
+      <DependentUpon>RentCar.tt</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\ReportesRentCar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,6 +261,9 @@
     </Compile>
     <Compile Include="Utilities.cs" />
     <Compile Include="vehiculo.cs">
+      <DependentUpon>RentCar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VehiculosRentado.cs">
       <DependentUpon>RentCar.tt</DependentUpon>
     </Compile>
     <Compile Include="vehiculosrentados.Designer.cs">

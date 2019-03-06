@@ -22,6 +22,10 @@
         <AssociationConnector Association="rentCarModel.vehiculos_fk2" ManuallyRouted="false" />
         <EntityTypeShape EntityType="rentCarModel.Reportevehiculo" Width="1.5" PointX="8.375" PointY="0.75" />
         <AssociationConnector Association="rentCarModel.Renta_fk" />
+        <EntityTypeShape EntityType="rentCarModel.Reporte" Width="1.5" PointX="8.375" PointY="4.75" />
+        <EntityTypeShape EntityType="rentCarModel.VehiculosRentado" Width="1.5" PointX="9.375" PointY="8.75" />
+        <AssociationConnector Association="rentCarModel.FK_procesoInspeccion_Empleado" />
+        <AssociationConnector Association="rentCarModel.FK_procesoInspeccion_vehiculos" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

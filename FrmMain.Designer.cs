@@ -126,6 +126,7 @@
             this.btnInspeccion.Size = new System.Drawing.Size(131, 108);
             this.btnInspeccion.TabIndex = 12;
             this.btnInspeccion.UseVisualStyleBackColor = true;
+            this.btnInspeccion.Click += new System.EventHandler(this.btnInspeccion_Click);
             // 
             // btndevolucion
             // 

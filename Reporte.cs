@@ -12,19 +12,14 @@ namespace RentCarGonzalez
     using System;
     using System.Collections.Generic;
     
-    public partial class Renta
+    public partial class Reporte
     {
-        public int IdRenta { get; set; }
-        public int IdVehiculo { get; set; }
-        public int IdCliente { get; set; }
-        public int IdEmpleado { get; set; }
         public System.DateTime FechaRenta { get; set; }
         public string DetalleRenta { get; set; }
-        public string FechaDevolucion { get; set; }
-        public Nullable<decimal> montopordia { get; set; }
-        public Nullable<int> CantidadDias { get; set; }
-        public Nullable<bool> estado { get; set; }
-    
-        public virtual vehiculo vehiculo { get; set; }
+        public string NombreVehiculo { get; set; }
+        public string Modelo { get; set; }
+        public string Marca { get; set; }
+        public string Combustible { get; set; }
+        public string Cliente { get; set; }
     }
 }

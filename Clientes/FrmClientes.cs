@@ -70,5 +70,13 @@ namespace RentCarGonzalez.Clientes
 
             }
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            var cliente = from cl in entities.Clientes
+                         where (cl.Nombre.StartsWith(txtBuscar.Text))
+                         select cl;
+            dataGridClientes.DataSource = cliente.ToList();
+        }
     }
 }

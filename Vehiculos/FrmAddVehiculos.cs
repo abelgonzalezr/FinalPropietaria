@@ -35,6 +35,10 @@ namespace RentCarGonzalez.Vehiculos
             {
                 var vehiculo = entities.vehiculos.Find(this.values);
                 txtNombre.Text = vehiculo.Nombre;
+                txtNoChasis.Text = vehiculo.nochasis;
+                txtNoMotor.Text = vehiculo.nomotor;
+                txtNoPlaca.Text = vehiculo.noplaca;
+
             }
 
         }

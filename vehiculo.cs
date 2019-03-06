@@ -18,6 +18,7 @@ namespace RentCarGonzalez
         public vehiculo()
         {
             this.Rentas = new HashSet<Renta>();
+            this.procesoInspeccions = new HashSet<procesoInspeccion>();
         }
     
         public int IdVehiculos { get; set; }
@@ -35,5 +36,7 @@ namespace RentCarGonzalez
         public virtual TipoVehiculo TipoVehiculo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Renta> Rentas { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<procesoInspeccion> procesoInspeccions { get; set; }
     }
 }

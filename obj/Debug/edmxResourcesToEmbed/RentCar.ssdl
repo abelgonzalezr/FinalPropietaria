@@ -64,6 +64,15 @@ warning 6002: The table/view 'rentCar.dbo.Devolucion' does not have a primary ke
     <Property Name="IdInspeccion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="IdVehiculo" Type="int" Nullable="false" />
     <Property Name="detalleInspeccion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tieneRalladura" Type="bit" />
+    <Property Name="CantidadCombustible" Type="varchar" MaxLength="50" />
+    <Property Name="TieneGomarepuesta" Type="bit" />
+    <Property Name="TieneGato" Type="bit" />
+    <Property Name="TieneRoturasCristal" Type="bit" />
+    <Property Name="estadoGoma" Type="varchar" MaxLength="50" />
+    <Property Name="Fecha" Type="datetime" />
+    <Property Name="idempleado" Type="int" />
+    <Property Name="estado" Type="bit" />
   </EntityType>
   <EntityType Name="Renta">
     <Key>
@@ -78,6 +87,7 @@ warning 6002: The table/view 'rentCar.dbo.Devolucion' does not have a primary ke
     <Property Name="FechaDevolucion" Type="varchar" MaxLength="30" />
     <Property Name="montopordia" Type="money" />
     <Property Name="CantidadDias" Type="int" />
+    <Property Name="estado" Type="bit" />
   </EntityType>
   <EntityType Name="tiposDeCombustible">
     <Key>
@@ -110,6 +120,25 @@ warning 6002: The table/view 'rentCar.dbo.Devolucion' does not have a primary ke
     <Property Name="estado" Type="bit" />
   </EntityType>
   <!--Errors Found During Generation:
+warning 6002: The table/view 'rentCar.dbo.Reporte' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Reporte">
+    <Key>
+      <PropertyRef Name="FechaRenta" />
+      <PropertyRef Name="DetalleRenta" />
+      <PropertyRef Name="Modelo" />
+      <PropertyRef Name="Marca" />
+      <PropertyRef Name="Combustible" />
+      <PropertyRef Name="Cliente" />
+    </Key>
+    <Property Name="FechaRenta" Type="datetime" Nullable="false" />
+    <Property Name="DetalleRenta" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="NombreVehiculo" Type="varchar" MaxLength="30" />
+    <Property Name="Modelo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Marca" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Combustible" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Cliente" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
 warning 6002: The table/view 'rentCar.dbo.Reportevehiculos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="Reportevehiculos">
     <Key>
@@ -128,6 +157,42 @@ warning 6002: The table/view 'rentCar.dbo.Reportevehiculos' does not have a prim
     <Property Name="FechaRenta" Type="datetime" Nullable="false" />
     <Property Name="Cliente" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'rentCar.dbo.VehiculosRentados' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VehiculosRentados">
+    <Key>
+      <PropertyRef Name="IdRenta" />
+      <PropertyRef Name="IdVehiculos" />
+    </Key>
+    <Property Name="IdRenta" Type="int" Nullable="false" />
+    <Property Name="nombreVehiculo" Type="varchar" MaxLength="30" />
+    <Property Name="estado" Type="bit" />
+    <Property Name="IdVehiculos" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_procesoInspeccion_Empleado">
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
+    <End Role="procesoInspeccion" Type="Self.procesoInspeccion" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="IdEmpleado" />
+      </Principal>
+      <Dependent Role="procesoInspeccion">
+        <PropertyRef Name="IdInspeccion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_procesoInspeccion_vehiculos">
+    <End Role="vehiculos" Type="Self.vehiculos" Multiplicity="1" />
+    <End Role="procesoInspeccion" Type="Self.procesoInspeccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vehiculos">
+        <PropertyRef Name="IdVehiculos" />
+      </Principal>
+      <Dependent Role="procesoInspeccion">
+        <PropertyRef Name="IdVehiculo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_tiposDeCombustible_tiposDeCombustible1">
     <End Role="tiposDeCombustible" Type="Self.tiposDeCombustible" Multiplicity="1" />
     <End Role="tiposDeCombustible1" Type="Self.tiposDeCombustible" Multiplicity="0..1" />
@@ -218,6 +283,17 @@ warning 6002: The table/view 'rentCar.dbo.Reportevehiculos' does not have a prim
     [Devolucion].[fechaDevolucion] AS [fechaDevolucion]
     FROM [dbo].[Devolucion] AS [Devolucion]</DefiningQuery>
     </EntitySet>
+    <EntitySet Name="Reporte" EntityType="Self.Reporte" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Reporte].[FechaRenta] AS [FechaRenta], 
+    [Reporte].[DetalleRenta] AS [DetalleRenta], 
+    [Reporte].[NombreVehiculo] AS [NombreVehiculo], 
+    [Reporte].[Modelo] AS [Modelo], 
+    [Reporte].[Marca] AS [Marca], 
+    [Reporte].[Combustible] AS [Combustible], 
+    [Reporte].[Cliente] AS [Cliente]
+    FROM [dbo].[Reporte] AS [Reporte]</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="Reportevehiculos" EntityType="Self.Reportevehiculos" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [Reportevehiculos].[Vehiculo] AS [Vehiculo], 
@@ -229,6 +305,22 @@ warning 6002: The table/view 'rentCar.dbo.Reportevehiculos' does not have a prim
     [Reportevehiculos].[Cliente] AS [Cliente]
     FROM [dbo].[Reportevehiculos] AS [Reportevehiculos]</DefiningQuery>
     </EntitySet>
+    <EntitySet Name="VehiculosRentados" EntityType="Self.VehiculosRentados" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VehiculosRentados].[IdRenta] AS [IdRenta], 
+    [VehiculosRentados].[nombreVehiculo] AS [nombreVehiculo], 
+    [VehiculosRentados].[estado] AS [estado], 
+    [VehiculosRentados].[IdVehiculos] AS [IdVehiculos]
+    FROM [dbo].[VehiculosRentados] AS [VehiculosRentados]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_procesoInspeccion_Empleado" Association="Self.FK_procesoInspeccion_Empleado">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="procesoInspeccion" EntitySet="procesoInspeccion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_procesoInspeccion_vehiculos" Association="Self.FK_procesoInspeccion_vehiculos">
+      <End Role="vehiculos" EntitySet="vehiculos" />
+      <End Role="procesoInspeccion" EntitySet="procesoInspeccion" />
+    </AssociationSet>
     <AssociationSet Name="FK_tiposDeCombustible_tiposDeCombustible1" Association="Self.FK_tiposDeCombustible_tiposDeCombustible1">
       <End Role="tiposDeCombustible" EntitySet="tiposDeCombustible" />
       <End Role="tiposDeCombustible1" EntitySet="tiposDeCombustible" />
