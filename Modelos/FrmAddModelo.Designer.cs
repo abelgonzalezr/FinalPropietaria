@@ -100,6 +100,7 @@
             // 
             this.comboMarca.DataSource = this.marcasBindingSource;
             this.comboMarca.DisplayMember = "Nombre";
+            this.comboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboMarca.FormattingEnabled = true;
             this.comboMarca.Location = new System.Drawing.Point(70, 79);
             this.comboMarca.Name = "comboMarca";

@@ -32,3 +32,4 @@ C:\Users\Blade\source\repos\RentCarGonzalez\RentCarGonzalez\obj\Debug\RentCarGon
 C:\Users\Blade\source\repos\RentCarGonzalez\RentCarGonzalez\obj\Debug\RentCarGonzalez.Modelos.FrmAddModelo.resources
 C:\Users\Blade\source\repos\RentCarGonzalez\RentCarGonzalez\obj\Debug\RentCarGonzalez.Modelos.FrmModelo.resources
 C:\Users\Blade\source\repos\RentCarGonzalez\RentCarGonzalez\obj\Debug\RentCarGonzalez.Devoluciones.btnBack.resources
+C:\Users\Blade\source\repos\RentCarGonzalez\RentCarGonzalez\obj\Debug\RentCarGonzalez.Inspeccion.FrmInspeccion.resources
