@@ -21,10 +21,14 @@ namespace RentCarGonzalez.Clientes
 
         private void FrmClientes_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'rentCarDataSetfinal.Clientes' table. You can move, or remove it, as needed.
+            this.clientesTableAdapter1.Fill(this.rentCarDataSetfinal.Clientes);
+            // TODO: This line of code loads data into the 'rentCarDataSetfinal.Clientes' table. You can move, or remove it, as needed.
+            //this.clientesTableAdapter3.Fill(this.rentCarDataSetfinal.Clientes);
             // TODO: This line of code loads data into the 'datasetCedula.Clientes' table. You can move, or remove it, as needed.
-            this.clientesTableAdapter1.Fill(this.datasetCedula.Clientes);
+            //this.clientesTableAdapter1.Fill(this.datasetCedula.Clientes);
             // TODO: This line of code loads data into the 'rentCarDataSetAct.Clientes' table. You can move, or remove it, as needed.
-            this.clientesTableAdapter2.Fill(this.rentCarDataSetAct.Clientes);
+            //this.clientesTableAdapter2.Fill(this.rentCarDataSetAct.Clientes);
             // TODO: This line of code loads data into the 'rentCarDataSetAct.vehiculos' table. You can move, or remove it, as needed.
          
 

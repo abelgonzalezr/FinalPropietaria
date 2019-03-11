@@ -54,8 +54,10 @@ namespace RentCarGonzalez.TiposdeVehiculos
 
         private void FrmAddTipoVehiculo_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'rentCarDataSetfinal.estados' table. You can move, or remove it, as needed.
+            this.estadosTableAdapter.Fill(this.rentCarDataSetfinal.estados);
             // TODO: This line of code loads data into the 'rentCarDataSet2.estados' table. You can move, or remove it, as needed.
-            this.estadosTableAdapter.Fill(this.rentCarDataSet2.estados);
+            //this.estadosTableAdapter.Fill(this.rentCarDataSet2.estados);
             if (this.values != 0)
             {
                 var tipoVehiculo = entities.TipoVehiculoes.Find(this.values);

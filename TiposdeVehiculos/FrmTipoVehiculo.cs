@@ -22,10 +22,12 @@ namespace RentCarGonzalez.TiposdeVehiculo
 
         private void FrmTipoVehiculo_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'rentCarDataSetfinal.TipoVehiculo' table. You can move, or remove it, as needed.
+            this.tipoVehiculoTableAdapter.Fill(this.rentCarDataSetfinal.TipoVehiculo);
             // TODO: This line of code loads data into the 'rentcarddatasetUltimate.TipoVehiculo' table. You can move, or remove it, as needed.
-            this.tipoVehiculoTableAdapter1.Fill(this.rentcarddatasetUltimate.TipoVehiculo);
+            //this.tipoVehiculoTableAdapter1.Fill(this.rentcarddatasetUltimate.TipoVehiculo);
             // TODO: This line of code loads data into the 'rentCarDataSet.TipoVehiculo' table. You can move, or remove it, as needed.
-            this.tipoVehiculoTableAdapter.Fill(this.rentCarDataSet.TipoVehiculo);
+            //this.tipoVehiculoTableAdapter.Fill(this.rentCarDataSet.TipoVehiculo);
             // TODO: This line of code loads data into the 'rentCarDataSet.vehiculos' table. You can move, or remove it, as needed.
             
 

@@ -40,12 +40,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboCriterio = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.rentCarDataSet = new RentCarGonzalez.rentCarDataSet();
-            this.rentCarDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rentCarDataSetAct = new RentCarGonzalez.rentCarDataSetAct();
-            this.rentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rentaTableAdapter = new RentCarGonzalez.rentCarDataSetActTableAdapters.RentaTableAdapter();
             this.dataGridReporte = new System.Windows.Forms.DataGridView();
+            this.rentCarDataSetfinal = new RentCarGonzalez.rentCarDataSetfinal();
+            this.reportevehiculosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportevehiculosTableAdapter = new RentCarGonzalez.rentCarDataSetfinalTableAdapters.ReportevehiculosTableAdapter();
             this.vehiculoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.combustibleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.marcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,17 +51,10 @@
             this.detalleRentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaRentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reportevehiculosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rentCarDataSet1 = new RentCarGonzalez.rentCarDataSet1();
-            this.reportevehiculosTableAdapter = new RentCarGonzalez.rentCarDataSet1TableAdapters.ReportevehiculosTableAdapter();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSetAct)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReporte)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSetfinal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportevehiculosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -179,30 +170,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Criterio";
             // 
-            // rentCarDataSet
-            // 
-            this.rentCarDataSet.DataSetName = "rentCarDataSet";
-            this.rentCarDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // rentCarDataSetBindingSource
-            // 
-            this.rentCarDataSetBindingSource.DataSource = this.rentCarDataSet;
-            this.rentCarDataSetBindingSource.Position = 0;
-            // 
-            // rentCarDataSetAct
-            // 
-            this.rentCarDataSetAct.DataSetName = "rentCarDataSetAct";
-            this.rentCarDataSetAct.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // rentaBindingSource
-            // 
-            this.rentaBindingSource.DataMember = "Renta";
-            this.rentaBindingSource.DataSource = this.rentCarDataSetAct;
-            // 
-            // rentaTableAdapter
-            // 
-            this.rentaTableAdapter.ClearBeforeFill = true;
-            // 
             // dataGridReporte
             // 
             this.dataGridReporte.AllowUserToAddRows = false;
@@ -223,6 +190,20 @@
             this.dataGridReporte.ReadOnly = true;
             this.dataGridReporte.Size = new System.Drawing.Size(746, 150);
             this.dataGridReporte.TabIndex = 1;
+            // 
+            // rentCarDataSetfinal
+            // 
+            this.rentCarDataSetfinal.DataSetName = "rentCarDataSetfinal";
+            this.rentCarDataSetfinal.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // reportevehiculosBindingSource
+            // 
+            this.reportevehiculosBindingSource.DataMember = "Reportevehiculos";
+            this.reportevehiculosBindingSource.DataSource = this.rentCarDataSetfinal;
+            // 
+            // reportevehiculosTableAdapter
+            // 
+            this.reportevehiculosTableAdapter.ClearBeforeFill = true;
             // 
             // vehiculoDataGridViewTextBoxColumn
             // 
@@ -273,20 +254,6 @@
             this.clienteDataGridViewTextBoxColumn.Name = "clienteDataGridViewTextBoxColumn";
             this.clienteDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // reportevehiculosBindingSource
-            // 
-            this.reportevehiculosBindingSource.DataMember = "Reportevehiculos";
-            this.reportevehiculosBindingSource.DataSource = this.rentCarDataSet1;
-            // 
-            // rentCarDataSet1
-            // 
-            this.rentCarDataSet1.DataSetName = "rentCarDataSet1";
-            this.rentCarDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // reportevehiculosTableAdapter
-            // 
-            this.reportevehiculosTableAdapter.ClearBeforeFill = true;
-            // 
             // ReportesRentCar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -299,13 +266,9 @@
             this.Load += new System.EventHandler(this.ReportesRentCar_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSetAct)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReporte)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSetfinal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportevehiculosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -323,15 +286,10 @@
         private System.Windows.Forms.DateTimePicker datefechaFin;
         private System.Windows.Forms.DateTimePicker datefechaInicio;
         private System.Windows.Forms.Label lblFechaInicio;
-        private System.Windows.Forms.BindingSource rentCarDataSetBindingSource;
-        private rentCarDataSet rentCarDataSet;
-        private rentCarDataSetAct rentCarDataSetAct;
-        private System.Windows.Forms.BindingSource rentaBindingSource;
-        private rentCarDataSetActTableAdapters.RentaTableAdapter rentaTableAdapter;
         private System.Windows.Forms.DataGridView dataGridReporte;
-        private rentCarDataSet1 rentCarDataSet1;
+        private rentCarDataSetfinal rentCarDataSetfinal;
         private System.Windows.Forms.BindingSource reportevehiculosBindingSource;
-        private rentCarDataSet1TableAdapters.ReportevehiculosTableAdapter reportevehiculosTableAdapter;
+        private rentCarDataSetfinalTableAdapters.ReportevehiculosTableAdapter reportevehiculosTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn vehiculoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn combustibleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn marcaDataGridViewTextBoxColumn;

@@ -22,14 +22,22 @@ namespace RentCarGonzalez.Vehiculos
 
         private void FrmAddVehiculos_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'rentCarDataSetfinal.estados' table. You can move, or remove it, as needed.
+            this.estadosTableAdapter.Fill(this.rentCarDataSetfinal.estados);
+            // TODO: This line of code loads data into the 'rentCarDataSetfinal.tiposDeCombustible' table. You can move, or remove it, as needed.
+            this.tiposDeCombustibleTableAdapter.Fill(this.rentCarDataSetfinal.tiposDeCombustible);
+            // TODO: This line of code loads data into the 'rentCarDataSetfinal.TipoVehiculo' table. You can move, or remove it, as needed.
+            this.tipoVehiculoTableAdapter.Fill(this.rentCarDataSetfinal.TipoVehiculo);
+            // TODO: This line of code loads data into the 'rentCarDataSetfinal.Marcas' table. You can move, or remove it, as needed.
+            this.marcasTableAdapter.Fill(this.rentCarDataSetfinal.Marcas);
             // TODO: This line of code loads data into the 'rentCarDataSet2.estados' table. You can move, or remove it, as needed.
-            this.estadosTableAdapter.Fill(this.rentCarDataSet2.estados);
+            //this.estadosTableAdapter.Fill(this.rentCarDataSet2.estados);
             // TODO: This line of code loads data into the 'rentCarDataSet.tiposDeCombustible' table. You can move, or remove it, as needed.
-            this.tiposDeCombustibleTableAdapter.Fill(this.rentCarDataSet.tiposDeCombustible);
+            //this.tiposDeCombustibleTableAdapter.Fill(this.rentCarDataSet.tiposDeCombustible);
             // TODO: This line of code loads data into the 'rentCarDataSet.TipoVehiculo' table. You can move, or remove it, as needed.
-            this.tipoVehiculoTableAdapter.Fill(this.rentCarDataSet.TipoVehiculo);
+            //this.tipoVehiculoTableAdapter.Fill(this.rentCarDataSet.TipoVehiculo);
             // TODO: This line of code loads data into the 'rentCarDataSet.Marcas' table. You can move, or remove it, as needed.
-            this.marcasTableAdapter.Fill(this.rentCarDataSet.Marcas);
+            //this.marcasTableAdapter.Fill(this.rentCarDataSet.Marcas);
 
             if (this.values != 0)
             {

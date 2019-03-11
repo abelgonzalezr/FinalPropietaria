@@ -34,21 +34,25 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.datGridVehiculos = new System.Windows.Forms.DataGridView();
+            this.btnadd = new System.Windows.Forms.Button();
+            this.btnedit = new System.Windows.Forms.Button();
+            this.btndelete = new System.Windows.Forms.Button();
+            this.rentCarDataSetfinal = new RentCarGonzalez.rentCarDataSetfinal();
+            this.vehiculosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vehiculosTableAdapter = new RentCarGonzalez.rentCarDataSetfinalTableAdapters.vehiculosTableAdapter();
             this.idVehiculosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idMarcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idTipoVehiculoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idCombustibleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vehiculosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rentCarDataSet = new RentCarGonzalez.rentCarDataSet();
-            this.vehiculosTableAdapter = new RentCarGonzalez.rentCarDataSetTableAdapters.vehiculosTableAdapter();
-            this.btnadd = new System.Windows.Forms.Button();
-            this.btnedit = new System.Windows.Forms.Button();
-            this.btndelete = new System.Windows.Forms.Button();
+            this.nochasisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomotorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noplacaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datGridVehiculos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSetfinal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehiculosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -99,13 +103,61 @@
             this.nombreDataGridViewTextBoxColumn,
             this.idMarcaDataGridViewTextBoxColumn,
             this.idTipoVehiculoDataGridViewTextBoxColumn,
-            this.idCombustibleDataGridViewTextBoxColumn});
+            this.idCombustibleDataGridViewTextBoxColumn,
+            this.nochasisDataGridViewTextBoxColumn,
+            this.nomotorDataGridViewTextBoxColumn,
+            this.noplacaDataGridViewTextBoxColumn,
+            this.estadoDataGridViewCheckBoxColumn});
             this.datGridVehiculos.DataSource = this.vehiculosBindingSource;
             this.datGridVehiculos.Location = new System.Drawing.Point(29, 130);
             this.datGridVehiculos.Name = "datGridVehiculos";
             this.datGridVehiculos.ReadOnly = true;
             this.datGridVehiculos.Size = new System.Drawing.Size(546, 150);
             this.datGridVehiculos.TabIndex = 1;
+            // 
+            // btnadd
+            // 
+            this.btnadd.Image = global::RentCarGonzalez.Properties.Resources.Add_icon;
+            this.btnadd.Location = new System.Drawing.Point(584, 130);
+            this.btnadd.Name = "btnadd";
+            this.btnadd.Size = new System.Drawing.Size(75, 42);
+            this.btnadd.TabIndex = 2;
+            this.btnadd.UseVisualStyleBackColor = true;
+            this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
+            // 
+            // btnedit
+            // 
+            this.btnedit.Image = global::RentCarGonzalez.Properties.Resources.edit_validated_icon;
+            this.btnedit.Location = new System.Drawing.Point(584, 178);
+            this.btnedit.Name = "btnedit";
+            this.btnedit.Size = new System.Drawing.Size(75, 42);
+            this.btnedit.TabIndex = 3;
+            this.btnedit.UseVisualStyleBackColor = true;
+            this.btnedit.Click += new System.EventHandler(this.btnedit_Click);
+            // 
+            // btndelete
+            // 
+            this.btndelete.Image = global::RentCarGonzalez.Properties.Resources.Button_Close_icon__1_;
+            this.btndelete.Location = new System.Drawing.Point(584, 238);
+            this.btndelete.Name = "btndelete";
+            this.btndelete.Size = new System.Drawing.Size(75, 42);
+            this.btndelete.TabIndex = 4;
+            this.btndelete.UseVisualStyleBackColor = true;
+            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
+            // 
+            // rentCarDataSetfinal
+            // 
+            this.rentCarDataSetfinal.DataSetName = "rentCarDataSetfinal";
+            this.rentCarDataSetfinal.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vehiculosBindingSource
+            // 
+            this.vehiculosBindingSource.DataMember = "vehiculos";
+            this.vehiculosBindingSource.DataSource = this.rentCarDataSetfinal;
+            // 
+            // vehiculosTableAdapter
+            // 
+            this.vehiculosTableAdapter.ClearBeforeFill = true;
             // 
             // idVehiculosDataGridViewTextBoxColumn
             // 
@@ -142,49 +194,33 @@
             this.idCombustibleDataGridViewTextBoxColumn.Name = "idCombustibleDataGridViewTextBoxColumn";
             this.idCombustibleDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // vehiculosBindingSource
+            // nochasisDataGridViewTextBoxColumn
             // 
-            this.vehiculosBindingSource.DataMember = "vehiculos";
-            this.vehiculosBindingSource.DataSource = this.rentCarDataSet;
+            this.nochasisDataGridViewTextBoxColumn.DataPropertyName = "nochasis";
+            this.nochasisDataGridViewTextBoxColumn.HeaderText = "nochasis";
+            this.nochasisDataGridViewTextBoxColumn.Name = "nochasisDataGridViewTextBoxColumn";
+            this.nochasisDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // rentCarDataSet
+            // nomotorDataGridViewTextBoxColumn
             // 
-            this.rentCarDataSet.DataSetName = "rentCarDataSet";
-            this.rentCarDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.nomotorDataGridViewTextBoxColumn.DataPropertyName = "nomotor";
+            this.nomotorDataGridViewTextBoxColumn.HeaderText = "nomotor";
+            this.nomotorDataGridViewTextBoxColumn.Name = "nomotorDataGridViewTextBoxColumn";
+            this.nomotorDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // vehiculosTableAdapter
+            // noplacaDataGridViewTextBoxColumn
             // 
-            this.vehiculosTableAdapter.ClearBeforeFill = true;
+            this.noplacaDataGridViewTextBoxColumn.DataPropertyName = "noplaca";
+            this.noplacaDataGridViewTextBoxColumn.HeaderText = "noplaca";
+            this.noplacaDataGridViewTextBoxColumn.Name = "noplacaDataGridViewTextBoxColumn";
+            this.noplacaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // btnadd
+            // estadoDataGridViewCheckBoxColumn
             // 
-            this.btnadd.Image = global::RentCarGonzalez.Properties.Resources.Add_icon;
-            this.btnadd.Location = new System.Drawing.Point(584, 130);
-            this.btnadd.Name = "btnadd";
-            this.btnadd.Size = new System.Drawing.Size(75, 42);
-            this.btnadd.TabIndex = 2;
-            this.btnadd.UseVisualStyleBackColor = true;
-            this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
-            // 
-            // btnedit
-            // 
-            this.btnedit.Image = global::RentCarGonzalez.Properties.Resources.edit_validated_icon;
-            this.btnedit.Location = new System.Drawing.Point(584, 178);
-            this.btnedit.Name = "btnedit";
-            this.btnedit.Size = new System.Drawing.Size(75, 42);
-            this.btnedit.TabIndex = 3;
-            this.btnedit.UseVisualStyleBackColor = true;
-            this.btnedit.Click += new System.EventHandler(this.btnedit_Click);
-            // 
-            // btndelete
-            // 
-            this.btndelete.Image = global::RentCarGonzalez.Properties.Resources.Button_Close_icon__1_;
-            this.btndelete.Location = new System.Drawing.Point(584, 238);
-            this.btndelete.Name = "btndelete";
-            this.btndelete.Size = new System.Drawing.Size(75, 42);
-            this.btndelete.TabIndex = 4;
-            this.btndelete.UseVisualStyleBackColor = true;
-            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
+            this.estadoDataGridViewCheckBoxColumn.DataPropertyName = "estado";
+            this.estadoDataGridViewCheckBoxColumn.HeaderText = "estado";
+            this.estadoDataGridViewCheckBoxColumn.Name = "estadoDataGridViewCheckBoxColumn";
+            this.estadoDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
             // FrmVehiculos
             // 
@@ -202,8 +238,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datGridVehiculos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSetfinal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehiculosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -215,16 +251,20 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView datGridVehiculos;
-        private rentCarDataSet rentCarDataSet;
+        private System.Windows.Forms.Button btnadd;
+        private System.Windows.Forms.Button btnedit;
+        private System.Windows.Forms.Button btndelete;
+        private rentCarDataSetfinal rentCarDataSetfinal;
         private System.Windows.Forms.BindingSource vehiculosBindingSource;
-        private rentCarDataSetTableAdapters.vehiculosTableAdapter vehiculosTableAdapter;
+        private rentCarDataSetfinalTableAdapters.vehiculosTableAdapter vehiculosTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idVehiculosDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idMarcaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idTipoVehiculoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCombustibleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button btnadd;
-        private System.Windows.Forms.Button btnedit;
-        private System.Windows.Forms.Button btndelete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nochasisDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomotorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn noplacaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn estadoDataGridViewCheckBoxColumn;
     }
 }

@@ -22,12 +22,18 @@ namespace RentCarGonzalez.Rentas
 
         private void FrmAddRenta_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'rentCarDataSetfinal.Empleado' table. You can move, or remove it, as needed.
+            this.empleadoTableAdapter.Fill(this.rentCarDataSetfinal.Empleado);
+            // TODO: This line of code loads data into the 'rentCarDataSetfinal.Clientes' table. You can move, or remove it, as needed.
+            this.clientesTableAdapter.Fill(this.rentCarDataSetfinal.Clientes);
+            // TODO: This line of code loads data into the 'rentCarDataSetfinal.vehiculos' table. You can move, or remove it, as needed.
+            this.vehiculosTableAdapter.Fill(this.rentCarDataSetfinal.vehiculos);
             // TODO: This line of code loads data into the 'rentCarDataSetAct.vehiculos' table. You can move, or remove it, as needed.
-            this.vehiculosTableAdapter.Fill(this.rentCarDataSetAct.vehiculos);
+          //  this.vehiculosTableAdapter.Fill(this.rentCarDataSetAct.vehiculos);
             // TODO: This line of code loads data into the 'rentCarDataSetAct.Clientes' table. You can move, or remove it, as needed.
-            this.clientesTableAdapter.Fill(this.rentCarDataSetAct.Clientes);
+           // this.clientesTableAdapter.Fill(this.rentCarDataSetAct.Clientes);
             // TODO: This line of code loads data into the 'rentCarDataSetAct.Empleado' table. You can move, or remove it, as needed.
-            this.empleadoTableAdapter.Fill(this.rentCarDataSetAct.Empleado);
+           // this.empleadoTableAdapter.Fill(this.rentCarDataSetAct.Empleado);
 
         }
 

@@ -26,10 +26,12 @@ namespace RentCarGonzalez.Devoluciones
 
         private void btnBack_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'rentCarDataSetfinal.Renta' table. You can move, or remove it, as needed.
+            this.rentaTableAdapter1.Fill(this.rentCarDataSetfinal.Renta);
             // TODO: This line of code loads data into the 'rentCarDataSetAct.Renta' table. You can move, or remove it, as needed.
-            this.rentaTableAdapter.Fill(this.rentCarDataSetAct.Renta);
+            //this.rentaTableAdapter.Fill(this.rentCarDataSetAct.Renta);
             // TODO: This line of code loads data into the 'vehiculosrentados.VehiculosRentados' table. You can move, or remove it, as needed.
-            this.vehiculosRentadosTableAdapter.Fill(this.vehiculosrentados.VehiculosRentados);
+            //this.vehiculosRentadosTableAdapter.Fill(this.vehiculosrentados.VehiculosRentados);
             // TODO: This line of code loads data into the 'rentCarDataSet3.VehiculosRentados' table. You can move, or remove it, as needed.
           
         }

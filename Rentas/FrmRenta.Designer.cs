@@ -30,26 +30,30 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dateTimebuscar = new System.Windows.Forms.DateTimePicker();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridRenta = new System.Windows.Forms.DataGridView();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.rentCarDataSetfinal = new RentCarGonzalez.rentCarDataSetfinal();
+            this.rentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rentaTableAdapter = new RentCarGonzalez.rentCarDataSetfinalTableAdapters.RentaTableAdapter();
             this.idRentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idVehiculoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idEmpleadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaRentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.detalleRentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rentCarDataSetAct = new RentCarGonzalez.rentCarDataSetAct();
-            this.rentaTableAdapter = new RentCarGonzalez.rentCarDataSetActTableAdapters.RentaTableAdapter();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.dateTimebuscar = new System.Windows.Forms.DateTimePicker();
+            this.fechaDevolucionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.montopordiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadDiasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridRenta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSetfinal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rentaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSetAct)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -62,6 +66,13 @@
             this.groupBox1.Size = new System.Drawing.Size(728, 65);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // dateTimebuscar
+            // 
+            this.dateTimebuscar.Location = new System.Drawing.Point(54, 29);
+            this.dateTimebuscar.Name = "dateTimebuscar";
+            this.dateTimebuscar.Size = new System.Drawing.Size(591, 20);
+            this.dateTimebuscar.TabIndex = 2;
             // 
             // btnBuscar
             // 
@@ -94,13 +105,61 @@
             this.idClienteDataGridViewTextBoxColumn,
             this.idEmpleadoDataGridViewTextBoxColumn,
             this.fechaRentaDataGridViewTextBoxColumn,
-            this.detalleRentaDataGridViewTextBoxColumn});
+            this.detalleRentaDataGridViewTextBoxColumn,
+            this.fechaDevolucionDataGridViewTextBoxColumn,
+            this.montopordiaDataGridViewTextBoxColumn,
+            this.cantidadDiasDataGridViewTextBoxColumn,
+            this.estadoDataGridViewCheckBoxColumn});
             this.dataGridRenta.DataSource = this.rentaBindingSource;
             this.dataGridRenta.Location = new System.Drawing.Point(13, 108);
             this.dataGridRenta.Name = "dataGridRenta";
             this.dataGridRenta.ReadOnly = true;
             this.dataGridRenta.Size = new System.Drawing.Size(645, 150);
             this.dataGridRenta.TabIndex = 1;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Image = global::RentCarGonzalez.Properties.Resources.Button_Close_icon__1_;
+            this.btnDelete.Location = new System.Drawing.Point(665, 217);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(60, 41);
+            this.btnDelete.TabIndex = 4;
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Image = global::RentCarGonzalez.Properties.Resources.edit_validated_icon;
+            this.btnEdit.Location = new System.Drawing.Point(665, 164);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(60, 46);
+            this.btnEdit.TabIndex = 3;
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Image = global::RentCarGonzalez.Properties.Resources.Add_icon;
+            this.btnAdd.Location = new System.Drawing.Point(665, 108);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(60, 49);
+            this.btnAdd.TabIndex = 2;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // rentCarDataSetfinal
+            // 
+            this.rentCarDataSetfinal.DataSetName = "rentCarDataSetfinal";
+            this.rentCarDataSetfinal.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // rentaBindingSource
+            // 
+            this.rentaBindingSource.DataMember = "Renta";
+            this.rentaBindingSource.DataSource = this.rentCarDataSetfinal;
+            // 
+            // rentaTableAdapter
+            // 
+            this.rentaTableAdapter.ClearBeforeFill = true;
             // 
             // idRentaDataGridViewTextBoxColumn
             // 
@@ -144,56 +203,33 @@
             this.detalleRentaDataGridViewTextBoxColumn.Name = "detalleRentaDataGridViewTextBoxColumn";
             this.detalleRentaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // rentaBindingSource
+            // fechaDevolucionDataGridViewTextBoxColumn
             // 
-            this.rentaBindingSource.DataMember = "Renta";
-            this.rentaBindingSource.DataSource = this.rentCarDataSetAct;
+            this.fechaDevolucionDataGridViewTextBoxColumn.DataPropertyName = "FechaDevolucion";
+            this.fechaDevolucionDataGridViewTextBoxColumn.HeaderText = "FechaDevolucion";
+            this.fechaDevolucionDataGridViewTextBoxColumn.Name = "fechaDevolucionDataGridViewTextBoxColumn";
+            this.fechaDevolucionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // rentCarDataSetAct
+            // montopordiaDataGridViewTextBoxColumn
             // 
-            this.rentCarDataSetAct.DataSetName = "rentCarDataSetAct";
-            this.rentCarDataSetAct.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.montopordiaDataGridViewTextBoxColumn.DataPropertyName = "montopordia";
+            this.montopordiaDataGridViewTextBoxColumn.HeaderText = "montopordia";
+            this.montopordiaDataGridViewTextBoxColumn.Name = "montopordiaDataGridViewTextBoxColumn";
+            this.montopordiaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // rentaTableAdapter
+            // cantidadDiasDataGridViewTextBoxColumn
             // 
-            this.rentaTableAdapter.ClearBeforeFill = true;
+            this.cantidadDiasDataGridViewTextBoxColumn.DataPropertyName = "CantidadDias";
+            this.cantidadDiasDataGridViewTextBoxColumn.HeaderText = "CantidadDias";
+            this.cantidadDiasDataGridViewTextBoxColumn.Name = "cantidadDiasDataGridViewTextBoxColumn";
+            this.cantidadDiasDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // btnDelete
+            // estadoDataGridViewCheckBoxColumn
             // 
-            this.btnDelete.Image = global::RentCarGonzalez.Properties.Resources.Button_Close_icon__1_;
-            this.btnDelete.Location = new System.Drawing.Point(665, 217);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(60, 41);
-            this.btnDelete.TabIndex = 4;
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Image = global::RentCarGonzalez.Properties.Resources.edit_validated_icon;
-            this.btnEdit.Location = new System.Drawing.Point(665, 164);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(60, 46);
-            this.btnEdit.TabIndex = 3;
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Image = global::RentCarGonzalez.Properties.Resources.Add_icon;
-            this.btnAdd.Location = new System.Drawing.Point(665, 108);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(60, 49);
-            this.btnAdd.TabIndex = 2;
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // dateTimebuscar
-            // 
-            this.dateTimebuscar.Location = new System.Drawing.Point(54, 29);
-            this.dateTimebuscar.Name = "dateTimebuscar";
-            this.dateTimebuscar.Size = new System.Drawing.Size(591, 20);
-            this.dateTimebuscar.TabIndex = 2;
+            this.estadoDataGridViewCheckBoxColumn.DataPropertyName = "estado";
+            this.estadoDataGridViewCheckBoxColumn.HeaderText = "estado";
+            this.estadoDataGridViewCheckBoxColumn.Name = "estadoDataGridViewCheckBoxColumn";
+            this.estadoDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
             // FrmRenta
             // 
@@ -211,8 +247,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridRenta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSetfinal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rentaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSetAct)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -223,18 +259,22 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridRenta;
-        private rentCarDataSetAct rentCarDataSetAct;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.DateTimePicker dateTimebuscar;
+        private rentCarDataSetfinal rentCarDataSetfinal;
         private System.Windows.Forms.BindingSource rentaBindingSource;
-        private rentCarDataSetActTableAdapters.RentaTableAdapter rentaTableAdapter;
+        private rentCarDataSetfinalTableAdapters.RentaTableAdapter rentaTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idRentaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idVehiculoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idClienteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idEmpleadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaRentaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn detalleRentaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.DateTimePicker dateTimebuscar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDevolucionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn montopordiaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDiasDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn estadoDataGridViewCheckBoxColumn;
     }
 }

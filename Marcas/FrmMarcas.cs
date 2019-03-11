@@ -20,8 +20,10 @@ namespace RentCarGonzalez.Marcas
 
         private void FrmMarcas_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'rentCarDataSetfinal.Marcas' table. You can move, or remove it, as needed.
+            this.marcasTableAdapter.Fill(this.rentCarDataSetfinal.Marcas);
             // TODO: This line of code loads data into the 'rentCarDataSet.Marcas' table. You can move, or remove it, as needed.
-            this.marcasTableAdapter.Fill(this.rentCarDataSet.Marcas);
+           // this.marcasTableAdapter.Fill(this.rentCarDataSet.Marcas);
 
         }
 

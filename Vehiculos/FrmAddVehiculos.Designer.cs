@@ -30,13 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.comboMarca = new System.Windows.Forms.ComboBox();
-            this.marcasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rentCarDataSet = new RentCarGonzalez.rentCarDataSet();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.comboEstado = new System.Windows.Forms.ComboBox();
-            this.estadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rentCarDataSet2 = new RentCarGonzalez.rentCarDataSet2();
             this.txtNoChasis = new System.Windows.Forms.TextBox();
             this.txtNoPlaca = new System.Windows.Forms.TextBox();
             this.txtNoMotor = new System.Windows.Forms.TextBox();
@@ -44,9 +40,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.ComboCombustible = new System.Windows.Forms.ComboBox();
-            this.tiposDeCombustibleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ComboTipoVehiculo = new System.Windows.Forms.ComboBox();
-            this.tipoVehiculoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.Combustible = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,17 +48,21 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnback = new System.Windows.Forms.Button();
             this.btnsave = new System.Windows.Forms.Button();
-            this.marcasTableAdapter = new RentCarGonzalez.rentCarDataSetTableAdapters.MarcasTableAdapter();
-            this.tipoVehiculoTableAdapter = new RentCarGonzalez.rentCarDataSetTableAdapters.TipoVehiculoTableAdapter();
-            this.tiposDeCombustibleTableAdapter = new RentCarGonzalez.rentCarDataSetTableAdapters.tiposDeCombustibleTableAdapter();
-            this.estadosTableAdapter = new RentCarGonzalez.rentCarDataSet2TableAdapters.estadosTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSet)).BeginInit();
+            this.rentCarDataSetfinal = new RentCarGonzalez.rentCarDataSetfinal();
+            this.marcasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.marcasTableAdapter = new RentCarGonzalez.rentCarDataSetfinalTableAdapters.MarcasTableAdapter();
+            this.tipoVehiculoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tipoVehiculoTableAdapter = new RentCarGonzalez.rentCarDataSetfinalTableAdapters.TipoVehiculoTableAdapter();
+            this.tiposDeCombustibleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tiposDeCombustibleTableAdapter = new RentCarGonzalez.rentCarDataSetfinalTableAdapters.tiposDeCombustibleTableAdapter();
+            this.estadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.estadosTableAdapter = new RentCarGonzalez.rentCarDataSetfinalTableAdapters.estadosTableAdapter();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.estadosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tiposDeCombustibleBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSetfinal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoVehiculoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tiposDeCombustibleBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.estadosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // comboMarca
@@ -78,16 +76,6 @@
             this.comboMarca.Size = new System.Drawing.Size(307, 21);
             this.comboMarca.TabIndex = 0;
             this.comboMarca.ValueMember = "IdMarca";
-            // 
-            // marcasBindingSource
-            // 
-            this.marcasBindingSource.DataMember = "Marcas";
-            this.marcasBindingSource.DataSource = this.rentCarDataSet;
-            // 
-            // rentCarDataSet
-            // 
-            this.rentCarDataSet.DataSetName = "rentCarDataSet";
-            this.rentCarDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // groupBox1
             // 
@@ -134,16 +122,6 @@
             this.comboEstado.Size = new System.Drawing.Size(307, 21);
             this.comboEstado.TabIndex = 14;
             this.comboEstado.ValueMember = "value";
-            // 
-            // estadosBindingSource
-            // 
-            this.estadosBindingSource.DataMember = "estados";
-            this.estadosBindingSource.DataSource = this.rentCarDataSet2;
-            // 
-            // rentCarDataSet2
-            // 
-            this.rentCarDataSet2.DataSetName = "rentCarDataSet2";
-            this.rentCarDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txtNoChasis
             // 
@@ -205,11 +183,6 @@
             this.ComboCombustible.TabIndex = 7;
             this.ComboCombustible.ValueMember = "IdCombustible";
             // 
-            // tiposDeCombustibleBindingSource
-            // 
-            this.tiposDeCombustibleBindingSource.DataMember = "tiposDeCombustible";
-            this.tiposDeCombustibleBindingSource.DataSource = this.rentCarDataSet;
-            // 
             // ComboTipoVehiculo
             // 
             this.ComboTipoVehiculo.DataSource = this.tipoVehiculoBindingSource;
@@ -221,11 +194,6 @@
             this.ComboTipoVehiculo.Size = new System.Drawing.Size(307, 21);
             this.ComboTipoVehiculo.TabIndex = 6;
             this.ComboTipoVehiculo.ValueMember = "IdTipoVehiculo";
-            // 
-            // tipoVehiculoBindingSource
-            // 
-            this.tipoVehiculoBindingSource.DataMember = "TipoVehiculo";
-            this.tipoVehiculoBindingSource.DataSource = this.rentCarDataSet;
             // 
             // txtNombre
             // 
@@ -282,24 +250,49 @@
             // btnsave
             // 
             this.btnsave.Image = global::RentCarGonzalez.Properties.Resources.Save_icon__1_;
-            this.btnsave.Location = new System.Drawing.Point(361, 380);
+            this.btnsave.Location = new System.Drawing.Point(362, 381);
             this.btnsave.Name = "btnsave";
             this.btnsave.Size = new System.Drawing.Size(61, 43);
             this.btnsave.TabIndex = 3;
             this.btnsave.UseVisualStyleBackColor = true;
             this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
             // 
+            // rentCarDataSetfinal
+            // 
+            this.rentCarDataSetfinal.DataSetName = "rentCarDataSetfinal";
+            this.rentCarDataSetfinal.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // marcasBindingSource
+            // 
+            this.marcasBindingSource.DataMember = "Marcas";
+            this.marcasBindingSource.DataSource = this.rentCarDataSetfinal;
+            // 
             // marcasTableAdapter
             // 
             this.marcasTableAdapter.ClearBeforeFill = true;
+            // 
+            // tipoVehiculoBindingSource
+            // 
+            this.tipoVehiculoBindingSource.DataMember = "TipoVehiculo";
+            this.tipoVehiculoBindingSource.DataSource = this.rentCarDataSetfinal;
             // 
             // tipoVehiculoTableAdapter
             // 
             this.tipoVehiculoTableAdapter.ClearBeforeFill = true;
             // 
+            // tiposDeCombustibleBindingSource
+            // 
+            this.tiposDeCombustibleBindingSource.DataMember = "tiposDeCombustible";
+            this.tiposDeCombustibleBindingSource.DataSource = this.rentCarDataSetfinal;
+            // 
             // tiposDeCombustibleTableAdapter
             // 
             this.tiposDeCombustibleTableAdapter.ClearBeforeFill = true;
+            // 
+            // estadosBindingSource
+            // 
+            this.estadosBindingSource.DataMember = "estados";
+            this.estadosBindingSource.DataSource = this.rentCarDataSetfinal;
             // 
             // estadosTableAdapter
             // 
@@ -316,14 +309,13 @@
             this.Name = "FrmAddVehiculos";
             this.Text = "Añadir Vehiculo";
             this.Load += new System.EventHandler(this.FrmAddVehiculos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.estadosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tiposDeCombustibleBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSetfinal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoVehiculoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tiposDeCombustibleBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.estadosBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -341,13 +333,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnback;
         private System.Windows.Forms.Button btnsave;
-        private rentCarDataSet rentCarDataSet;
-        private System.Windows.Forms.BindingSource marcasBindingSource;
-        private rentCarDataSetTableAdapters.MarcasTableAdapter marcasTableAdapter;
-        private System.Windows.Forms.BindingSource tipoVehiculoBindingSource;
-        private rentCarDataSetTableAdapters.TipoVehiculoTableAdapter tipoVehiculoTableAdapter;
-        private System.Windows.Forms.BindingSource tiposDeCombustibleBindingSource;
-        private rentCarDataSetTableAdapters.tiposDeCombustibleTableAdapter tiposDeCombustibleTableAdapter;
         private System.Windows.Forms.ComboBox comboEstado;
         private System.Windows.Forms.TextBox txtNoChasis;
         private System.Windows.Forms.TextBox txtNoPlaca;
@@ -355,9 +340,15 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private rentCarDataSet2 rentCarDataSet2;
-        private System.Windows.Forms.BindingSource estadosBindingSource;
-        private rentCarDataSet2TableAdapters.estadosTableAdapter estadosTableAdapter;
         private System.Windows.Forms.Label label7;
+        private rentCarDataSetfinal rentCarDataSetfinal;
+        private System.Windows.Forms.BindingSource marcasBindingSource;
+        private rentCarDataSetfinalTableAdapters.MarcasTableAdapter marcasTableAdapter;
+        private System.Windows.Forms.BindingSource tipoVehiculoBindingSource;
+        private rentCarDataSetfinalTableAdapters.TipoVehiculoTableAdapter tipoVehiculoTableAdapter;
+        private System.Windows.Forms.BindingSource tiposDeCombustibleBindingSource;
+        private rentCarDataSetfinalTableAdapters.tiposDeCombustibleTableAdapter tiposDeCombustibleTableAdapter;
+        private System.Windows.Forms.BindingSource estadosBindingSource;
+        private rentCarDataSetfinalTableAdapters.estadosTableAdapter estadosTableAdapter;
     }
 }

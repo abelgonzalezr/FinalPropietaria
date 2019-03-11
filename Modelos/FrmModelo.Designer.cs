@@ -34,20 +34,20 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridModelo = new System.Windows.Forms.DataGridView();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.rentcarddatasetUltimate = new RentCarGonzalez.RentcarddatasetUltimate();
+            this.modeloBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.modeloTableAdapter = new RentCarGonzalez.RentcarddatasetUltimateTableAdapters.ModeloTableAdapter();
             this.idModeloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idMarcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estadoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.modeloBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rentcarddatasetUltimate = new RentCarGonzalez.RentcarddatasetUltimate();
-            this.modeloTableAdapter = new RentCarGonzalez.RentcarddatasetUltimateTableAdapters.ModeloTableAdapter();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridModelo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.modeloBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rentcarddatasetUltimate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modeloBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -104,48 +104,7 @@
             this.dataGridModelo.ReadOnly = true;
             this.dataGridModelo.Size = new System.Drawing.Size(445, 150);
             this.dataGridModelo.TabIndex = 1;
-            // 
-            // idModeloDataGridViewTextBoxColumn
-            // 
-            this.idModeloDataGridViewTextBoxColumn.DataPropertyName = "IdModelo";
-            this.idModeloDataGridViewTextBoxColumn.HeaderText = "IdModelo";
-            this.idModeloDataGridViewTextBoxColumn.Name = "idModeloDataGridViewTextBoxColumn";
-            this.idModeloDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idMarcaDataGridViewTextBoxColumn
-            // 
-            this.idMarcaDataGridViewTextBoxColumn.DataPropertyName = "IdMarca";
-            this.idMarcaDataGridViewTextBoxColumn.HeaderText = "IdMarca";
-            this.idMarcaDataGridViewTextBoxColumn.Name = "idMarcaDataGridViewTextBoxColumn";
-            this.idMarcaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // estadoDataGridViewCheckBoxColumn
-            // 
-            this.estadoDataGridViewCheckBoxColumn.DataPropertyName = "estado";
-            this.estadoDataGridViewCheckBoxColumn.HeaderText = "estado";
-            this.estadoDataGridViewCheckBoxColumn.Name = "estadoDataGridViewCheckBoxColumn";
-            this.estadoDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // modeloBindingSource
-            // 
-            this.modeloBindingSource.DataMember = "Modelo";
-            this.modeloBindingSource.DataSource = this.rentcarddatasetUltimate;
-            // 
-            // rentcarddatasetUltimate
-            // 
-            this.rentcarddatasetUltimate.DataSetName = "RentcarddatasetUltimate";
-            this.rentcarddatasetUltimate.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // modeloTableAdapter
-            // 
-            this.modeloTableAdapter.ClearBeforeFill = true;
+            this.dataGridModelo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridModelo_CellContentClick);
             // 
             // btnAdd
             // 
@@ -177,6 +136,48 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // rentcarddatasetUltimate
+            // 
+            this.rentcarddatasetUltimate.DataSetName = "RentcarddatasetUltimate";
+            this.rentcarddatasetUltimate.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // modeloBindingSource
+            // 
+            this.modeloBindingSource.DataMember = "Modelo";
+            this.modeloBindingSource.DataSource = this.rentcarddatasetUltimate;
+            // 
+            // modeloTableAdapter
+            // 
+            this.modeloTableAdapter.ClearBeforeFill = true;
+            // 
+            // idModeloDataGridViewTextBoxColumn
+            // 
+            this.idModeloDataGridViewTextBoxColumn.DataPropertyName = "IdModelo";
+            this.idModeloDataGridViewTextBoxColumn.HeaderText = "IdModelo";
+            this.idModeloDataGridViewTextBoxColumn.Name = "idModeloDataGridViewTextBoxColumn";
+            this.idModeloDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idMarcaDataGridViewTextBoxColumn
+            // 
+            this.idMarcaDataGridViewTextBoxColumn.DataPropertyName = "IdMarca";
+            this.idMarcaDataGridViewTextBoxColumn.HeaderText = "IdMarca";
+            this.idMarcaDataGridViewTextBoxColumn.Name = "idMarcaDataGridViewTextBoxColumn";
+            this.idMarcaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // estadoDataGridViewCheckBoxColumn
+            // 
+            this.estadoDataGridViewCheckBoxColumn.DataPropertyName = "estado";
+            this.estadoDataGridViewCheckBoxColumn.HeaderText = "estado";
+            this.estadoDataGridViewCheckBoxColumn.Name = "estadoDataGridViewCheckBoxColumn";
+            this.estadoDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
             // FrmModelo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -193,8 +194,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridModelo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.modeloBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rentcarddatasetUltimate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modeloBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -206,6 +207,9 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridModelo;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnDelete;
         private RentcarddatasetUltimate rentcarddatasetUltimate;
         private System.Windows.Forms.BindingSource modeloBindingSource;
         private RentcarddatasetUltimateTableAdapters.ModeloTableAdapter modeloTableAdapter;
@@ -213,8 +217,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idMarcaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn estadoDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnDelete;
     }
 }

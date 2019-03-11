@@ -87,11 +87,6 @@
       <DependentUpon>CrystalReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="DatasetCedula.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DatasetCedula.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Devolucion.cs">
       <DependentUpon>RentCar.tt</DependentUpon>
     </Compile>
@@ -193,35 +188,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RentCar.edmx</DependentUpon>
     </Compile>
-    <Compile Include="rentCarDataSet.Designer.cs">
+    <Compile Include="rentCarDataSetfinal.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>rentCarDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="rentCarDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rentCarDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="rentCarDataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rentCarDataSet2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="rentCarDataSet3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rentCarDataSet3.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="rentCarDataSetAct.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rentCarDataSetAct.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="RentcarddatasetUltimate.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RentcarddatasetUltimate.xsd</DependentUpon>
+      <DependentUpon>rentCarDataSetfinal.xsd</DependentUpon>
     </Compile>
     <Compile Include="Reporte.cs">
       <DependentUpon>RentCar.tt</DependentUpon>
@@ -271,11 +241,6 @@
     </Compile>
     <Compile Include="VehiculosRentado.cs">
       <DependentUpon>RentCar.tt</DependentUpon>
-    </Compile>
-    <Compile Include="vehiculosrentados.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>vehiculosrentados.xsd</DependentUpon>
     </Compile>
     <Compile Include="Vehiculos\FrmAddVehiculos.cs">
       <SubType>Form</SubType>
@@ -363,17 +328,6 @@
     <EmbeddedResource Include="Vehiculos\FrmVehiculos.resx">
       <DependentUpon>FrmVehiculos.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DatasetCedula.xsc">
-      <DependentUpon>DatasetCedula.xsd</DependentUpon>
-    </None>
-    <None Include="DatasetCedula.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DatasetCedula.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DatasetCedula.xss">
-      <DependentUpon>DatasetCedula.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -384,16 +338,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="vehiculosrentados.xsc">
-      <DependentUpon>vehiculosrentados.xsd</DependentUpon>
+    <None Include="rentCarDataSetfinal.xsc">
+      <DependentUpon>rentCarDataSetfinal.xsd</DependentUpon>
     </None>
-    <None Include="vehiculosrentados.xsd">
+    <None Include="rentCarDataSetfinal.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>vehiculosrentados.Designer.cs</LastGenOutput>
+      <LastGenOutput>rentCarDataSetfinal.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="vehiculosrentados.xss">
-      <DependentUpon>vehiculosrentados.xsd</DependentUpon>
+    <None Include="rentCarDataSetfinal.xss">
+      <DependentUpon>rentCarDataSetfinal.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -406,72 +360,6 @@
     </EntityDeploy>
     <None Include="RentCar.edmx.diagram">
       <DependentUpon>RentCar.edmx</DependentUpon>
-    </None>
-    <None Include="rentCarDataSet.xsc">
-      <DependentUpon>rentCarDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="rentCarDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>rentCarDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="rentCarDataSet.xss">
-      <DependentUpon>rentCarDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="rentCarDataSet1.xsc">
-      <DependentUpon>rentCarDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="rentCarDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>rentCarDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="rentCarDataSet1.xss">
-      <DependentUpon>rentCarDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="rentCarDataSet2.xsc">
-      <DependentUpon>rentCarDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="rentCarDataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>rentCarDataSet2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="rentCarDataSet2.xss">
-      <DependentUpon>rentCarDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="rentCarDataSet3.xsc">
-      <DependentUpon>rentCarDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="rentCarDataSet3.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>rentCarDataSet3.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="rentCarDataSet3.xss">
-      <DependentUpon>rentCarDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="rentCarDataSetAct.xsc">
-      <DependentUpon>rentCarDataSetAct.xsd</DependentUpon>
-    </None>
-    <None Include="rentCarDataSetAct.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>rentCarDataSetAct.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="rentCarDataSetAct.xss">
-      <DependentUpon>rentCarDataSetAct.xsd</DependentUpon>
-    </None>
-    <None Include="RentcarddatasetUltimate.xsc">
-      <DependentUpon>RentcarddatasetUltimate.xsd</DependentUpon>
-    </None>
-    <None Include="RentcarddatasetUltimate.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>RentcarddatasetUltimate.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="RentcarddatasetUltimate.xss">
-      <DependentUpon>RentcarddatasetUltimate.xsd</DependentUpon>
     </None>
     <None Include="Resources\mobile_interface-01-512.png" />
   </ItemGroup>

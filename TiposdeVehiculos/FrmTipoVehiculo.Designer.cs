@@ -33,25 +33,21 @@
             this.btnedit = new System.Windows.Forms.Button();
             this.btndelete = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idTipoVehiculoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.tipoVehiculoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.rentcarddatasetUltimate = new RentCarGonzalez.RentcarddatasetUltimate();
-            this.tipoVehiculoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rentCarDataSet = new RentCarGonzalez.rentCarDataSet();
-            this.tipoVehiculoTableAdapter = new RentCarGonzalez.rentCarDataSetTableAdapters.TipoVehiculoTableAdapter();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnbuscar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.tipoVehiculoTableAdapter1 = new RentCarGonzalez.RentcarddatasetUltimateTableAdapters.TipoVehiculoTableAdapter();
+            this.rentCarDataSetfinal = new RentCarGonzalez.rentCarDataSetfinal();
+            this.tipoVehiculoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tipoVehiculoTableAdapter = new RentCarGonzalez.rentCarDataSetfinalTableAdapters.TipoVehiculoTableAdapter();
+            this.idTipoVehiculoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tipoVehiculoBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentcarddatasetUltimate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tipoVehiculoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSetfinal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoVehiculoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnadd
@@ -91,29 +87,16 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.estado,
             this.idTipoVehiculoDataGridViewTextBoxColumn,
             this.nombreDataGridViewTextBoxColumn,
-            this.estado});
-            this.dataGridView1.DataSource = this.tipoVehiculoBindingSource1;
+            this.estadoDataGridViewCheckBoxColumn});
+            this.dataGridView1.DataSource = this.tipoVehiculoBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 90);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(327, 150);
             this.dataGridView1.TabIndex = 3;
-            // 
-            // idTipoVehiculoDataGridViewTextBoxColumn
-            // 
-            this.idTipoVehiculoDataGridViewTextBoxColumn.DataPropertyName = "IdTipoVehiculo";
-            this.idTipoVehiculoDataGridViewTextBoxColumn.HeaderText = "IdTipoVehiculo";
-            this.idTipoVehiculoDataGridViewTextBoxColumn.Name = "idTipoVehiculoDataGridViewTextBoxColumn";
-            this.idTipoVehiculoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // estado
             // 
@@ -121,30 +104,6 @@
             this.estado.HeaderText = "estado";
             this.estado.Name = "estado";
             this.estado.ReadOnly = true;
-            // 
-            // tipoVehiculoBindingSource1
-            // 
-            this.tipoVehiculoBindingSource1.DataMember = "TipoVehiculo";
-            this.tipoVehiculoBindingSource1.DataSource = this.rentcarddatasetUltimate;
-            // 
-            // rentcarddatasetUltimate
-            // 
-            this.rentcarddatasetUltimate.DataSetName = "RentcarddatasetUltimate";
-            this.rentcarddatasetUltimate.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tipoVehiculoBindingSource
-            // 
-            this.tipoVehiculoBindingSource.DataMember = "TipoVehiculo";
-            this.tipoVehiculoBindingSource.DataSource = this.rentCarDataSet;
-            // 
-            // rentCarDataSet
-            // 
-            this.rentCarDataSet.DataSetName = "rentCarDataSet";
-            this.rentCarDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tipoVehiculoTableAdapter
-            // 
-            this.tipoVehiculoTableAdapter.ClearBeforeFill = true;
             // 
             // groupBox1
             // 
@@ -183,9 +142,40 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Buscar";
             // 
-            // tipoVehiculoTableAdapter1
+            // rentCarDataSetfinal
             // 
-            this.tipoVehiculoTableAdapter1.ClearBeforeFill = true;
+            this.rentCarDataSetfinal.DataSetName = "rentCarDataSetfinal";
+            this.rentCarDataSetfinal.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tipoVehiculoBindingSource
+            // 
+            this.tipoVehiculoBindingSource.DataMember = "TipoVehiculo";
+            this.tipoVehiculoBindingSource.DataSource = this.rentCarDataSetfinal;
+            // 
+            // tipoVehiculoTableAdapter
+            // 
+            this.tipoVehiculoTableAdapter.ClearBeforeFill = true;
+            // 
+            // idTipoVehiculoDataGridViewTextBoxColumn
+            // 
+            this.idTipoVehiculoDataGridViewTextBoxColumn.DataPropertyName = "IdTipoVehiculo";
+            this.idTipoVehiculoDataGridViewTextBoxColumn.HeaderText = "IdTipoVehiculo";
+            this.idTipoVehiculoDataGridViewTextBoxColumn.Name = "idTipoVehiculoDataGridViewTextBoxColumn";
+            this.idTipoVehiculoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // estadoDataGridViewCheckBoxColumn
+            // 
+            this.estadoDataGridViewCheckBoxColumn.DataPropertyName = "estado";
+            this.estadoDataGridViewCheckBoxColumn.HeaderText = "estado";
+            this.estadoDataGridViewCheckBoxColumn.Name = "estadoDataGridViewCheckBoxColumn";
+            this.estadoDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
             // FrmTipoVehiculo
             // 
@@ -201,12 +191,10 @@
             this.Text = "Tipo Vehiculo";
             this.Load += new System.EventHandler(this.FrmTipoVehiculo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tipoVehiculoBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentcarddatasetUltimate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tipoVehiculoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSetfinal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoVehiculoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -217,18 +205,16 @@
         private System.Windows.Forms.Button btnedit;
         private System.Windows.Forms.Button btndelete;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private rentCarDataSet rentCarDataSet;
-        private System.Windows.Forms.BindingSource tipoVehiculoBindingSource;
-        private rentCarDataSetTableAdapters.TipoVehiculoTableAdapter tipoVehiculoTableAdapter;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnbuscar;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label1;
-        private RentcarddatasetUltimate rentcarddatasetUltimate;
-        private System.Windows.Forms.BindingSource tipoVehiculoBindingSource1;
-        private RentcarddatasetUltimateTableAdapters.TipoVehiculoTableAdapter tipoVehiculoTableAdapter1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn estado;
+        private rentCarDataSetfinal rentCarDataSetfinal;
+        private System.Windows.Forms.BindingSource tipoVehiculoBindingSource;
+        private rentCarDataSetfinalTableAdapters.TipoVehiculoTableAdapter tipoVehiculoTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idTipoVehiculoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn estado;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn estadoDataGridViewCheckBoxColumn;
     }
 }

@@ -34,28 +34,25 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridEmpleados = new System.Windows.Forms.DataGridView();
-            this.empleadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rentCarDataSetAct = new RentCarGonzalez.rentCarDataSetAct();
-            this.empleadoTableAdapter = new RentCarGonzalez.rentCarDataSetActTableAdapters.EmpleadoTableAdapter();
+            this.cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.datasetCedula = new RentCarGonzalez.DatasetCedula();
-            this.empleadoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.empleadoTableAdapter1 = new RentCarGonzalez.DatasetCedulaTableAdapters.EmpleadoTableAdapter();
-            this.empleadoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.rentCarDataSetfinal = new RentCarGonzalez.rentCarDataSetfinal();
+            this.empleadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.empleadoTableAdapter = new RentCarGonzalez.rentCarDataSetfinalTableAdapters.EmpleadoTableAdapter();
             this.idEmpleadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.decisionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numeroTelefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cedulaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tandaLaboralDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.porcientocomisionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaingresoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEmpleados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSetfinal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSetAct)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datasetCedula)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -102,31 +99,28 @@
             this.dataGridEmpleados.AutoGenerateColumns = false;
             this.dataGridEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cedula,
             this.idEmpleadoDataGridViewTextBoxColumn,
             this.nombreDataGridViewTextBoxColumn,
             this.decisionDataGridViewTextBoxColumn,
-            this.cedula,
-            this.numeroTelefonoDataGridViewTextBoxColumn});
-            this.dataGridEmpleados.DataSource = this.empleadoBindingSource2;
+            this.numeroTelefonoDataGridViewTextBoxColumn,
+            this.cedulaDataGridViewTextBoxColumn,
+            this.tandaLaboralDataGridViewTextBoxColumn,
+            this.porcientocomisionDataGridViewTextBoxColumn,
+            this.fechaingresoDataGridViewTextBoxColumn});
+            this.dataGridEmpleados.DataSource = this.empleadoBindingSource;
             this.dataGridEmpleados.Location = new System.Drawing.Point(32, 124);
             this.dataGridEmpleados.Name = "dataGridEmpleados";
             this.dataGridEmpleados.ReadOnly = true;
             this.dataGridEmpleados.Size = new System.Drawing.Size(553, 139);
             this.dataGridEmpleados.TabIndex = 1;
             // 
-            // empleadoBindingSource
+            // cedula
             // 
-            this.empleadoBindingSource.DataMember = "Empleado";
-            this.empleadoBindingSource.DataSource = this.rentCarDataSetAct;
-            // 
-            // rentCarDataSetAct
-            // 
-            this.rentCarDataSetAct.DataSetName = "rentCarDataSetAct";
-            this.rentCarDataSetAct.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // empleadoTableAdapter
-            // 
-            this.empleadoTableAdapter.ClearBeforeFill = true;
+            this.cedula.DataPropertyName = "cedula";
+            this.cedula.HeaderText = "cedula";
+            this.cedula.Name = "cedula";
+            this.cedula.ReadOnly = true;
             // 
             // btnAdd
             // 
@@ -158,24 +152,19 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // datasetCedula
+            // rentCarDataSetfinal
             // 
-            this.datasetCedula.DataSetName = "DatasetCedula";
-            this.datasetCedula.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.rentCarDataSetfinal.DataSetName = "rentCarDataSetfinal";
+            this.rentCarDataSetfinal.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // empleadoBindingSource1
+            // empleadoBindingSource
             // 
-            this.empleadoBindingSource1.DataMember = "Empleado";
-            this.empleadoBindingSource1.DataSource = this.datasetCedula;
+            this.empleadoBindingSource.DataMember = "Empleado";
+            this.empleadoBindingSource.DataSource = this.rentCarDataSetfinal;
             // 
-            // empleadoTableAdapter1
+            // empleadoTableAdapter
             // 
-            this.empleadoTableAdapter1.ClearBeforeFill = true;
-            // 
-            // empleadoBindingSource2
-            // 
-            this.empleadoBindingSource2.DataMember = "Empleado";
-            this.empleadoBindingSource2.DataSource = this.datasetCedula;
+            this.empleadoTableAdapter.ClearBeforeFill = true;
             // 
             // idEmpleadoDataGridViewTextBoxColumn
             // 
@@ -194,16 +183,9 @@
             // decisionDataGridViewTextBoxColumn
             // 
             this.decisionDataGridViewTextBoxColumn.DataPropertyName = "Decision";
-            this.decisionDataGridViewTextBoxColumn.HeaderText = "Direccion";
+            this.decisionDataGridViewTextBoxColumn.HeaderText = "Decision";
             this.decisionDataGridViewTextBoxColumn.Name = "decisionDataGridViewTextBoxColumn";
             this.decisionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cedula
-            // 
-            this.cedula.DataPropertyName = "cedula";
-            this.cedula.HeaderText = "cedula";
-            this.cedula.Name = "cedula";
-            this.cedula.ReadOnly = true;
             // 
             // numeroTelefonoDataGridViewTextBoxColumn
             // 
@@ -211,6 +193,34 @@
             this.numeroTelefonoDataGridViewTextBoxColumn.HeaderText = "numeroTelefono";
             this.numeroTelefonoDataGridViewTextBoxColumn.Name = "numeroTelefonoDataGridViewTextBoxColumn";
             this.numeroTelefonoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cedulaDataGridViewTextBoxColumn
+            // 
+            this.cedulaDataGridViewTextBoxColumn.DataPropertyName = "cedula";
+            this.cedulaDataGridViewTextBoxColumn.HeaderText = "cedula";
+            this.cedulaDataGridViewTextBoxColumn.Name = "cedulaDataGridViewTextBoxColumn";
+            this.cedulaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tandaLaboralDataGridViewTextBoxColumn
+            // 
+            this.tandaLaboralDataGridViewTextBoxColumn.DataPropertyName = "tandaLaboral";
+            this.tandaLaboralDataGridViewTextBoxColumn.HeaderText = "tandaLaboral";
+            this.tandaLaboralDataGridViewTextBoxColumn.Name = "tandaLaboralDataGridViewTextBoxColumn";
+            this.tandaLaboralDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // porcientocomisionDataGridViewTextBoxColumn
+            // 
+            this.porcientocomisionDataGridViewTextBoxColumn.DataPropertyName = "porcientocomision";
+            this.porcientocomisionDataGridViewTextBoxColumn.HeaderText = "porcientocomision";
+            this.porcientocomisionDataGridViewTextBoxColumn.Name = "porcientocomisionDataGridViewTextBoxColumn";
+            this.porcientocomisionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechaingresoDataGridViewTextBoxColumn
+            // 
+            this.fechaingresoDataGridViewTextBoxColumn.DataPropertyName = "fechaingreso";
+            this.fechaingresoDataGridViewTextBoxColumn.HeaderText = "fechaingreso";
+            this.fechaingresoDataGridViewTextBoxColumn.Name = "fechaingresoDataGridViewTextBoxColumn";
+            this.fechaingresoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // FrmEmpleado
             // 
@@ -228,11 +238,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEmpleados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSetfinal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSetAct)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datasetCedula)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -244,20 +251,20 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridEmpleados;
-        private rentCarDataSetAct rentCarDataSetAct;
-        private System.Windows.Forms.BindingSource empleadoBindingSource;
-        private rentCarDataSetActTableAdapters.EmpleadoTableAdapter empleadoTableAdapter;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
-        private DatasetCedula datasetCedula;
-        private System.Windows.Forms.BindingSource empleadoBindingSource1;
-        private DatasetCedulaTableAdapters.EmpleadoTableAdapter empleadoTableAdapter1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cedula;
+        private rentCarDataSetfinal rentCarDataSetfinal;
+        private System.Windows.Forms.BindingSource empleadoBindingSource;
+        private rentCarDataSetfinalTableAdapters.EmpleadoTableAdapter empleadoTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idEmpleadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn decisionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cedula;
         private System.Windows.Forms.DataGridViewTextBoxColumn numeroTelefonoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource empleadoBindingSource2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cedulaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tandaLaboralDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn porcientocomisionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaingresoDataGridViewTextBoxColumn;
     }
 }

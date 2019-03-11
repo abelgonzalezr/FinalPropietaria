@@ -23,6 +23,8 @@ namespace RentCarGonzalez.Modelos
         {
             // TODO: This line of code loads data into the 'rentcarddatasetUltimate.Modelo' table. You can move, or remove it, as needed.
             this.modeloTableAdapter.Fill(this.rentcarddatasetUltimate.Modelo);
+            // TODO: This line of code loads data into the 'rentcarddatasetUltimate.Modelo' table. You can move, or remove it, as needed.
+            this.modeloTableAdapter.Fill(this.rentcarddatasetUltimate.Modelo);
 
         }
 
@@ -74,6 +76,11 @@ namespace RentCarGonzalez.Modelos
                     MessageBox.Show("No existe registro No" + delmodelo);
 
             }
+        }
+
+        private void dataGridModelo_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

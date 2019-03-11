@@ -21,8 +21,10 @@ namespace RentCarGonzalez.TiposCombustible
 
         private void FrmTipoCombustible_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'rentCarDataSetfinal.tiposDeCombustible' table. You can move, or remove it, as needed.
+            this.tiposDeCombustibleTableAdapter1.Fill(this.rentCarDataSetfinal.tiposDeCombustible);
             // TODO: This line of code loads data into the 'rentCarDataSet1.tiposDeCombustible' table. You can move, or remove it, as needed.
-            this.tiposDeCombustibleTableAdapter1.Fill(this.rentCarDataSet1.tiposDeCombustible);
+            //this.tiposDeCombustibleTableAdapter1.Fill(this.rentCarDataSet1.tiposDeCombustible);
             // TODO: This line of code loads data into the 'rentCarDataSet.tiposDeCombustible' table. You can move, or remove it, as needed.
             // this.tiposDeCombustibleTableAdapter.Fill(this.rentCarDataSet.tiposDeCombustible);
 

@@ -40,10 +40,12 @@ namespace RentCarGonzalez.Reportes
 
         private void ReportesRentCar_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'rentCarDataSetfinal.Reportevehiculos' table. You can move, or remove it, as needed.
+            this.reportevehiculosTableAdapter.Fill(this.rentCarDataSetfinal.Reportevehiculos);
             // TODO: This line of code loads data into the 'rentCarDataSet1.Reportevehiculos' table. You can move, or remove it, as needed.
-            this.reportevehiculosTableAdapter.Fill(this.rentCarDataSet1.Reportevehiculos);
+           // this.reportevehiculosTableAdapter.Fill(this.rentCarDataSet1.Reportevehiculos);
             // TODO: This line of code loads data into the 'rentCarDataSetAct.Renta' table. You can move, or remove it, as needed.
-            this.rentaTableAdapter.Fill(this.rentCarDataSetAct.Renta);
+           // this.rentaTableAdapter.Fill(this.rentCarDataSetAct.Renta);
 
         }
 

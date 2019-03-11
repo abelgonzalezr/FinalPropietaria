@@ -21,8 +21,10 @@ namespace RentCarGonzalez.Vehiculos
 
         private void FrmVehiculos_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'rentCarDataSetfinal.vehiculos' table. You can move, or remove it, as needed.
+            this.vehiculosTableAdapter.Fill(this.rentCarDataSetfinal.vehiculos);
             // TODO: This line of code loads data into the 'rentCarDataSet.vehiculos' table. You can move, or remove it, as needed.
-            this.vehiculosTableAdapter.Fill(this.rentCarDataSet.vehiculos);
+            //this.vehiculosTableAdapter.Fill(this.rentCarDataSet.vehiculos);
 
         }
 

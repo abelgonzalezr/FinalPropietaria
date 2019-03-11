@@ -22,10 +22,14 @@ namespace RentCarGonzalez.Modelos
 
         private void FrmAddModelo_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'rentCarDataSetfinal.estados' table. You can move, or remove it, as needed.
+            this.estadosTableAdapter.Fill(this.rentCarDataSetfinal.estados);
+            // TODO: This line of code loads data into the 'rentCarDataSetfinal.Marcas' table. You can move, or remove it, as needed.
+            this.marcasTableAdapter.Fill(this.rentCarDataSetfinal.Marcas);
             // TODO: This line of code loads data into the 'rentCarDataSet2.estados' table. You can move, or remove it, as needed.
-            this.estadosTableAdapter.Fill(this.rentCarDataSet2.estados);
+            //this.estadosTableAdapter.Fill(this.rentCarDataSet2.estados);
             // TODO: This line of code loads data into the 'rentcarddatasetUltimate.Marcas' table. You can move, or remove it, as needed.
-            this.marcasTableAdapter.Fill(this.rentcarddatasetUltimate.Marcas);
+           // this.marcasTableAdapter.Fill(this.rentcarddatasetUltimate.Marcas);
 
         }
 

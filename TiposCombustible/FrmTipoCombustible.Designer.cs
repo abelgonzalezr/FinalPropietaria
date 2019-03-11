@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.tiposDeCombustibleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnadd = new System.Windows.Forms.Button();
             this.btnedit = new System.Windows.Forms.Button();
             this.btndelete = new System.Windows.Forms.Button();
@@ -38,21 +37,17 @@
             this.txtbuscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.datagridcombustible = new System.Windows.Forms.DataGridView();
+            this.rentCarDataSetfinal = new RentCarGonzalez.rentCarDataSetfinal();
+            this.tiposDeCombustibleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tiposDeCombustibleTableAdapter1 = new RentCarGonzalez.rentCarDataSetfinalTableAdapters.tiposDeCombustibleTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tiposDeCombustibleBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.rentCarDataSet1 = new RentCarGonzalez.rentCarDataSet();
-            this.tiposDeCombustibleTableAdapter1 = new RentCarGonzalez.rentCarDataSetTableAdapters.tiposDeCombustibleTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.tiposDeCombustibleBindingSource)).BeginInit();
+            this.estadoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridcombustible)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tiposDeCombustibleBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSetfinal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tiposDeCombustibleBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // tiposDeCombustibleBindingSource
-            // 
-            this.tiposDeCombustibleBindingSource.DataMember = "tiposDeCombustible";
             // 
             // btnadd
             // 
@@ -129,13 +124,28 @@
             this.datagridcombustible.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datagridcombustible.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2});
-            this.datagridcombustible.DataSource = this.tiposDeCombustibleBindingSource1;
+            this.dataGridViewTextBoxColumn2,
+            this.estadoDataGridViewCheckBoxColumn});
+            this.datagridcombustible.DataSource = this.tiposDeCombustibleBindingSource;
             this.datagridcombustible.Location = new System.Drawing.Point(12, 82);
             this.datagridcombustible.Name = "datagridcombustible";
             this.datagridcombustible.ReadOnly = true;
             this.datagridcombustible.Size = new System.Drawing.Size(240, 150);
             this.datagridcombustible.TabIndex = 5;
+            // 
+            // rentCarDataSetfinal
+            // 
+            this.rentCarDataSetfinal.DataSetName = "rentCarDataSetfinal";
+            this.rentCarDataSetfinal.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tiposDeCombustibleBindingSource
+            // 
+            this.tiposDeCombustibleBindingSource.DataMember = "tiposDeCombustible";
+            this.tiposDeCombustibleBindingSource.DataSource = this.rentCarDataSetfinal;
+            // 
+            // tiposDeCombustibleTableAdapter1
+            // 
+            this.tiposDeCombustibleTableAdapter1.ClearBeforeFill = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -151,19 +161,12 @@
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
-            // tiposDeCombustibleBindingSource1
+            // estadoDataGridViewCheckBoxColumn
             // 
-            this.tiposDeCombustibleBindingSource1.DataMember = "tiposDeCombustible";
-            this.tiposDeCombustibleBindingSource1.DataSource = this.rentCarDataSet1;
-            // 
-            // rentCarDataSet1
-            // 
-            this.rentCarDataSet1.DataSetName = "rentCarDataSet";
-            this.rentCarDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tiposDeCombustibleTableAdapter1
-            // 
-            this.tiposDeCombustibleTableAdapter1.ClearBeforeFill = true;
+            this.estadoDataGridViewCheckBoxColumn.DataPropertyName = "estado";
+            this.estadoDataGridViewCheckBoxColumn.HeaderText = "estado";
+            this.estadoDataGridViewCheckBoxColumn.Name = "estadoDataGridViewCheckBoxColumn";
+            this.estadoDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
             // FrmTipoCombustible
             // 
@@ -178,19 +181,17 @@
             this.Name = "FrmTipoCombustible";
             this.Text = "Tipo Combustible";
             this.Load += new System.EventHandler(this.FrmTipoCombustible_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.tiposDeCombustibleBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridcombustible)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tiposDeCombustibleBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSetfinal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tiposDeCombustibleBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private rentCarDataSet rentCarDataSet;
-        private System.Windows.Forms.BindingSource tiposDeCombustibleBindingSource;
         private rentCarDataSetTableAdapters.tiposDeCombustibleTableAdapter tiposDeCombustibleTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCombustibleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
@@ -202,10 +203,11 @@
         private System.Windows.Forms.TextBox txtbuscar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView datagridcombustible;
-        private rentCarDataSet rentCarDataSet1;
-        private System.Windows.Forms.BindingSource tiposDeCombustibleBindingSource1;
-        private rentCarDataSetTableAdapters.tiposDeCombustibleTableAdapter tiposDeCombustibleTableAdapter1;
+        private rentCarDataSetfinal rentCarDataSetfinal;
+        private System.Windows.Forms.BindingSource tiposDeCombustibleBindingSource;
+        private rentCarDataSetfinalTableAdapters.tiposDeCombustibleTableAdapter tiposDeCombustibleTableAdapter1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn estadoDataGridViewCheckBoxColumn;
     }
 }

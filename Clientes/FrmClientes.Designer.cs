@@ -36,26 +36,26 @@
             this.btndelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.rentCarDataSetAct = new RentCarGonzalez.rentCarDataSetAct();
             this.dataGridClientes = new System.Windows.Forms.DataGridView();
+            this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rentCarDataSetfinal = new RentCarGonzalez.rentCarDataSetfinal();
+            this.rentCarDataSetfinalBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clientesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.clientesTableAdapter1 = new RentCarGonzalez.rentCarDataSetfinalTableAdapters.ClientesTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cedulaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.datasetCedulaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.datasetCedula = new RentCarGonzalez.DatasetCedula();
-            this.clientesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.clientesTableAdapter2 = new RentCarGonzalez.rentCarDataSetActTableAdapters.ClientesTableAdapter();
-            this.clientesTableAdapter1 = new RentCarGonzalez.DatasetCedulaTableAdapters.ClientesTableAdapter();
+            this.noTarjetaCrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.limiteCreditoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoPersonaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSetAct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datasetCedulaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datasetCedula)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSetfinal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSetfinalBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -125,11 +125,6 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // rentCarDataSetAct
-            // 
-            this.rentCarDataSetAct.DataSetName = "rentCarDataSetAct";
-            this.rentCarDataSetAct.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // dataGridClientes
             // 
             this.dataGridClientes.AllowUserToAddRows = false;
@@ -141,13 +136,35 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
-            this.cedulaDataGridViewTextBoxColumn});
-            this.dataGridClientes.DataSource = this.clientesBindingSource;
+            this.cedulaDataGridViewTextBoxColumn,
+            this.noTarjetaCrDataGridViewTextBoxColumn,
+            this.limiteCreditoDataGridViewTextBoxColumn,
+            this.tipoPersonaDataGridViewTextBoxColumn});
+            this.dataGridClientes.DataSource = this.clientesBindingSource1;
             this.dataGridClientes.Location = new System.Drawing.Point(12, 94);
             this.dataGridClientes.Name = "dataGridClientes";
             this.dataGridClientes.ReadOnly = true;
             this.dataGridClientes.Size = new System.Drawing.Size(546, 150);
             this.dataGridClientes.TabIndex = 8;
+            // 
+            // rentCarDataSetfinal
+            // 
+            this.rentCarDataSetfinal.DataSetName = "rentCarDataSetfinal";
+            this.rentCarDataSetfinal.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // rentCarDataSetfinalBindingSource
+            // 
+            this.rentCarDataSetfinalBindingSource.DataSource = this.rentCarDataSetfinal;
+            this.rentCarDataSetfinalBindingSource.Position = 0;
+            // 
+            // clientesBindingSource1
+            // 
+            this.clientesBindingSource1.DataMember = "Clientes";
+            this.clientesBindingSource1.DataSource = this.rentCarDataSetfinalBindingSource;
+            // 
+            // clientesTableAdapter1
+            // 
+            this.clientesTableAdapter1.ClearBeforeFill = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -184,33 +201,26 @@
             this.cedulaDataGridViewTextBoxColumn.Name = "cedulaDataGridViewTextBoxColumn";
             this.cedulaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // clientesBindingSource
+            // noTarjetaCrDataGridViewTextBoxColumn
             // 
-            this.clientesBindingSource.DataMember = "Clientes";
-            this.clientesBindingSource.DataSource = this.datasetCedulaBindingSource;
+            this.noTarjetaCrDataGridViewTextBoxColumn.DataPropertyName = "noTarjetaCr";
+            this.noTarjetaCrDataGridViewTextBoxColumn.HeaderText = "noTarjetaCr";
+            this.noTarjetaCrDataGridViewTextBoxColumn.Name = "noTarjetaCrDataGridViewTextBoxColumn";
+            this.noTarjetaCrDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // datasetCedulaBindingSource
+            // limiteCreditoDataGridViewTextBoxColumn
             // 
-            this.datasetCedulaBindingSource.DataSource = this.datasetCedula;
-            this.datasetCedulaBindingSource.Position = 0;
+            this.limiteCreditoDataGridViewTextBoxColumn.DataPropertyName = "LimiteCredito";
+            this.limiteCreditoDataGridViewTextBoxColumn.HeaderText = "LimiteCredito";
+            this.limiteCreditoDataGridViewTextBoxColumn.Name = "limiteCreditoDataGridViewTextBoxColumn";
+            this.limiteCreditoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // datasetCedula
+            // tipoPersonaDataGridViewTextBoxColumn
             // 
-            this.datasetCedula.DataSetName = "DatasetCedula";
-            this.datasetCedula.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // clientesBindingSource2
-            // 
-            this.clientesBindingSource2.DataMember = "Clientes";
-            this.clientesBindingSource2.DataSource = this.rentCarDataSetAct;
-            // 
-            // clientesTableAdapter2
-            // 
-            this.clientesTableAdapter2.ClearBeforeFill = true;
-            // 
-            // clientesTableAdapter1
-            // 
-            this.clientesTableAdapter1.ClearBeforeFill = true;
+            this.tipoPersonaDataGridViewTextBoxColumn.DataPropertyName = "TipoPersona";
+            this.tipoPersonaDataGridViewTextBoxColumn.HeaderText = "TipoPersona";
+            this.tipoPersonaDataGridViewTextBoxColumn.Name = "tipoPersonaDataGridViewTextBoxColumn";
+            this.tipoPersonaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // FrmClientes
             // 
@@ -227,12 +237,11 @@
             this.Load += new System.EventHandler(this.FrmClientes_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSetAct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datasetCedulaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datasetCedula)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSetfinal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentCarDataSetfinalBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -252,18 +261,19 @@
         private System.Windows.Forms.Button btndelete;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;
-        private rentCarDataSetAct rentCarDataSetAct;
         private System.Windows.Forms.DataGridView dataGridClientes;
-        private System.Windows.Forms.BindingSource clientesBindingSource2;
-        private rentCarDataSetActTableAdapters.ClientesTableAdapter clientesTableAdapter2;
-        private System.Windows.Forms.BindingSource datasetCedulaBindingSource;
-        private DatasetCedula datasetCedula;
         private System.Windows.Forms.BindingSource clientesBindingSource;
-        private DatasetCedulaTableAdapters.ClientesTableAdapter clientesTableAdapter1;
+        private System.Windows.Forms.BindingSource rentCarDataSetfinalBindingSource;
+        private rentCarDataSetfinal rentCarDataSetfinal;
+        private System.Windows.Forms.BindingSource clientesBindingSource1;
+        private rentCarDataSetfinalTableAdapters.ClientesTableAdapter clientesTableAdapter1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn cedulaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn noTarjetaCrDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn limiteCreditoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoPersonaDataGridViewTextBoxColumn;
     }
 }
